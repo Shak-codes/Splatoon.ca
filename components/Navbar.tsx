@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 type LinkConfig = {
   title: string;
@@ -12,28 +15,45 @@ type NavbarProps = {
 };
 
 const Navbar = ({ icon, config }: NavbarProps) => {
+  const pathname = usePathname();
+
   return (
-    <nav className="w-full px-6 py-4 shadow-md flex justify-around items-center">
-      <div className="flex items-center gap-3">
+    <nav className="w-full px-6 py-4 shadow-md flex justify-around items-center border-b-1 border-white-500 shadow-lg bg-white">
+      <div className="flex items-center">
         {/* {icon && (
           <Link href="/">
             <Image src={icon} alt="Site logo" width={40} height={40} />
           </Link>
         )} */}
-        <span className="text-xl font-semibold">Splatoon.ca</span>
+        <span className="text-xl font-semibold text-black">Splatoon.ca</span>
       </div>
 
-      <ul className="flex gap-6 items-center">
-        {config.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className="text-white-700 hover:text-blue-600 transition-colors"
-            >
-              {link.title}
-            </Link>
-          </li>
-        ))}
+      <ul className="gap-1 flex items-center">
+        {config.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`
+                  inline-block
+                  min-w-[80px] 
+                  py-0.75
+                  text-black
+                  text-center
+                  hover:font-bold
+                  hover:scale-105
+                  hover:bg-[var(--primary-accent)]
+                  transition-all 
+                  duration-200
+                  rounded-sm
+                  ${isActive ? "font-bold" : ""}`}
+              >
+                {link.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
