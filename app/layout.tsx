@@ -17,43 +17,43 @@ const geistMono = Geist_Mono({
 
 const auro = localFont({
   src: [
-    { path: "../public/fonts/auro-light.otf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Auro-Light.otf", weight: "200", style: "normal" },
     {
-      path: "../public/fonts/auro-light_italic.otf",
+      path: "../public/fonts/Auro-Light Italic.otf",
       weight: "200",
       style: "italic",
     },
-    { path: "../public/fonts/auro-book.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Auro-Book.otf", weight: "300", style: "normal" },
     {
-      path: "../public/fonts/auro-book_italic.otf",
+      path: "../public/fonts/Auro-Book Italic.otf",
       weight: "300",
       style: "italic",
     },
     {
-      path: "../public/fonts/auro-regular.otf",
+      path: "../public/fonts/Auro-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/auro-regular_italic.otf",
+      path: "../public/fonts/Auro-Regular Italic.otf",
       weight: "400",
       style: "italic",
     },
-    { path: "../public/fonts/auro-medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/Auro-Medium.otf", weight: "500", style: "normal" },
     {
-      path: "../public/fonts/auro-medium_italic.otf",
+      path: "../public/fonts/Auro-Medium Italic.otf",
       weight: "500",
       style: "italic",
     },
-    { path: "../public/fonts/auro-bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Auro-Bold.otf", weight: "700", style: "normal" },
     {
-      path: "../public/fonts/auro-bold_italic.otf",
+      path: "../public/fonts/Auro-Bold Italic.otf",
       weight: "700",
       style: "italic",
     },
-    { path: "../public/fonts/auro-black.otf", weight: "900", style: "normal" },
+    { path: "../public/fonts/Auro-Black.otf", weight: "900", style: "normal" },
     {
-      path: "../public/fonts/auro-black_italic.otf",
+      path: "../public/fonts/Auro-Black Italic.otf",
       weight: "900",
       style: "italic",
     },
