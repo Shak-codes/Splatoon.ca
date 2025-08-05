@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AccentInitializer } from "@/utils/accentInitializer";
+import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +12,53 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const auro = localFont({
+  src: [
+    { path: "../public/fonts/auro-light.otf", weight: "200", style: "normal" },
+    {
+      path: "../public/fonts/auro-light_italic.otf",
+      weight: "200",
+      style: "italic",
+    },
+    { path: "../public/fonts/auro-book.otf", weight: "300", style: "normal" },
+    {
+      path: "../public/fonts/auro-book_italic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/auro-regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/auro-regular_italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    { path: "../public/fonts/auro-medium.otf", weight: "500", style: "normal" },
+    {
+      path: "../public/fonts/auro-medium_italic.otf",
+      weight: "500",
+      style: "italic",
+    },
+    { path: "../public/fonts/auro-bold.otf", weight: "700", style: "normal" },
+    {
+      path: "../public/fonts/auro-bold_italic.otf",
+      weight: "700",
+      style: "italic",
+    },
+    { path: "../public/fonts/auro-black.otf", weight: "900", style: "normal" },
+    {
+      path: "../public/fonts/auro-black_italic.otf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-auro",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${auro.variable} antialiased`}>
         <AccentInitializer />
         {children}
       </body>
