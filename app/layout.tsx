@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AccentInitializer } from "@/utils/accentInitializer";
 import localFont from "next/font/local";
+import { BackgroundInitializer } from "@/utils/backgroundInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,6 +76,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${auro.variable} antialiased`}>
         <AccentInitializer />
+        <BackgroundInitializer />
         {children}
       </body>
     </html>
