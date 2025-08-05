@@ -25,7 +25,7 @@ const Navbar = ({ icon, config }: NavbarProps) => {
             <Image src={icon} alt="Site logo" width={40} height={40} />
           </Link>
         )} */}
-        <span className="text-xl font-semibold text-black">Splatoon.ca</span>
+        <span className="text-xl font-bold text-black">Splatoon.ca</span>
       </div>
 
       <ul className="gap-1 flex items-center">
@@ -38,16 +38,16 @@ const Navbar = ({ icon, config }: NavbarProps) => {
                 className={`
                   inline-block
                   min-w-[80px] 
-                  py-0.75
+                  py-1.75
                   text-black
                   text-center
-                  hover:font-bold
+                  hover:font-medium
                   hover:scale-105
                   hover:bg-[var(--primary-accent)]
                   transition-all 
                   duration-200
                   rounded-sm
-                  ${isActive ? "font-bold" : ""}`}
+                  ${isActive ? "font-medium" : ""}`}
               >
                 {link.title}
               </Link>
