@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventHeader from "@/components/EventHeader";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import PageHeader from "@/components/PageHeader";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -14,9 +13,15 @@ const navLinks = [
 
 const Events = () => {
   return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen pb-20">
+    <div className="flex flex-col items-center gap-10 min-h-screen pb-5">
       <Navbar config={navLinks} />
-      <EventHeader />
+      <PageHeader
+        title="Ready to join us?"
+        subtitle="Here's what you need to know"
+      />
+      <main className="flex-grow">
+        <EventHeader />
+      </main>
       <Footer />
     </div>
   );

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -11,8 +12,10 @@ const navLinks = [
 
 const About = () => {
   return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen pb-20">
+    <div className="flex flex-col items-center gap-10 min-h-screen pb-5">
       <Navbar config={navLinks} />
+      <PageHeader title="Want to know about us?" subtitle="Here's our story" />
+      <main className="flex-grow"></main>
       <Footer />
     </div>
   );

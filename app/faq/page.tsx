@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import PageHeader from "@/components/PageHeader";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -40,16 +41,22 @@ const testFAQ = [
   {
     question: "Do I have to show up at noon?",
     answer:
-      "Feel free to join us at any time. We usually stop pllaying matches around 5 to sign posters and take pictures though so don't be too late!",
+      "Feel free to join us at any time. We usually stop playing matches around 5 to sign posters and take pictures though so don't be too late!",
   },
 ];
 
 const FAQPage = () => {
   return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen pb-20">
+    <div className="flex flex-col items-center gap-10 min-h-screen pb-5">
       <Navbar config={navLinks} />
+      <PageHeader
+        title="Have some questions?"
+        subtitle="We may have the answers!"
+      />
+      <main className="flex-grow">
+        <FAQ faqs={testFAQ} />
+      </main>
       <Footer />
-      <FAQ faqs={testFAQ} />
     </div>
   );
 };
