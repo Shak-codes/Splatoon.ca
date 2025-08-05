@@ -1,6 +1,6 @@
 const Footer = ({}) => {
   return (
-    <footer className="row-start-3 flex gap-[24px] flex-wrap text-center px-6">
+    <footer className="shrink-0 text-center px-5">
       <p className="text-white">
         Splatoon.ca is an independent, fan-run website dedicated to organizing
         Splatoon events and connecting players in the Greater Toronto Area. This
