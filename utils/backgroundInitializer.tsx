@@ -3,12 +3,12 @@
 import { useEffect } from "react";
 
 const setBackground = () => {
-  const length = 10;
+  const length = 30;
   let bg = sessionStorage.getItem("bg-image");
 
   if (!bg) {
     const idx = Math.floor(Math.random() * length);
-    bg = `url("/background/combined_${idx + 1}.svg")`;
+    bg = `url("/backgrounds/${idx}.svg")`;
     sessionStorage.setItem("bg-image", bg);
   }
 
