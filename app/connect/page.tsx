@@ -28,16 +28,22 @@ const Connect = () => {
           link="https://bsky.app/profile/splatoon.ca"
           bannerColor={colors.bluesky}
           iconSrc={Bluesky}
+          title="Bluesky"
+          content="Follow us on Bluesky! We post here frequently regarding the details surrounding our events!"
         />
         <Card
           link="https://www.twitter.com/SplatoonGTA"
           bannerColor={colors.twitter}
           iconSrc={Twitter}
+          title="Twitter"
+          content="Follow us on Twitter! We haven't posted here for years but maybe that's changed by the time you're looking at this."
         />
         <Card
           link="https://discord.com/invite/squidsocial"
           bannerColor={colors.discord}
           iconSrc={Discord}
+          title="Discord"
+          content="The best way to keep in touch with us in by joining our Discord. Here you can ask questions not listed in our FAQ, get to know us, and even play some games!"
         />
       </main>
       <Footer />
