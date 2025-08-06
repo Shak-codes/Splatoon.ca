@@ -5,7 +5,7 @@ type PageHeaderProps = {
 
 const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
   return (
-    <header className="flex flex-col items-start self-start px-5">
+    <header className="flex flex-col items-start px-5">
       <h1 className="text-center text-5xl text-white font-bold pb-2">
         {title}
       </h1>
