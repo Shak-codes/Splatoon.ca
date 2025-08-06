@@ -6,67 +6,81 @@ type FAQItem = {
   id?: string;
   question: string;
   answer: string;
-  category?: string;
 };
 
-type FAQProps = {
+type FAQSection = {
+  section: string;
   faqs: FAQItem[];
 };
 
-const FAQ = ({ faqs }: FAQProps) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+type FAQProps = {
+  faqData: FAQSection[];
+};
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+const FAQ = ({ faqData }: FAQProps) => {
+  const [open, setOpen] = useState<Set<string>>(new Set());
+
+  const toggle = (sidx: number, fidx: number) => {
+    setOpen((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(`${sidx}-${fidx}`)) {
+        newSet.delete(`${sidx}-${fidx}`);
+      } else {
+        newSet.add(`${sidx}-${fidx}`);
+      }
+      return newSet;
+    });
   };
 
   return (
     <section className="rounded-2xl bg-white text-black py-12 px-6 w-[800px] transition-all duration-300 ease-in-out">
-      <div className="mx-auto w-full transition-all duration-300 ease-in-out">
-        <div className="space-y-4 w-full transition-all duration-300 ease-in-out">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={faq.id ?? index}
-                className={`
-                  bg-gray-100 rounded-2xl shadow-sm
-                  transition-all duration-300 ease-in-out
-                  overflow-hidden
-                  ${isOpen ? "max-h-[500px]" : "max-h-[72px]"}
-                `}
-              >
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full text-left p-5 flex justify-between items-center focus:outline-none cursor-pointer"
-                >
-                  <span className="text-lg font-medium flex-1 min-w-0 pr-4">
-                    {faq.question}
-                  </span>
-                  <span
-                    className={`transform transition-transform duration-300 ease-in-out text-2xl ${
-                      isOpen ? "rotate-45" : "rotate-0"
-                    }`}
+      <h4 className="">
+        Below is a list of the most commonly asked questions that we get.
+        Hopefully this helps answer some of your questions! In the case that it
+        doesn't, feel free to join our
+        <a href=""> Discord</a> and ask us directly.
+      </h4>
+      {faqData.map((section, sidx) => {
+        return (
+          <div className="mx-auto w-full transition-all duration-300 ease-in-out">
+            <h3 className="text-2xl font-bold p-5 pb-0">{section.section}</h3>
+            {section.faqs.map((faq, fidx) => {
+              const isOpen = open.has(`${sidx}-${fidx}`);
+              return (
+                <div key={`${sidx}-${fidx}`} className="border-b p-5">
+                  <button
+                    onClick={() => toggle(sidx, fidx)}
+                    className="w-full text-left flex justify-between items-center focus:outline-none cursor-pointer"
                   >
-                    +
-                  </span>
-                </button>
-                <div
-                  className={`
-                    px-5 pb-5 w-full
-                    transition-all duration-300 ease-in-out
-                    ${isOpen ? "opacity-100" : "opacity-0 h-0"}
-                  `}
-                >
-                  <p className="text-base leading-relaxed break-words">
-                    {faq.answer}
-                  </p>
+                    <span className="text-xl font-medium flex-1 min-w-0 pr-4">
+                      {faq.question}
+                    </span>
+                    <span
+                      className={`transform transition-transform duration-300 ease-in-out text-2xl ${
+                        isOpen ? "rotate-45" : "rotate-0"
+                      }`}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div
+                    className={`
+                        transition-all duration-300 ease-in-out overflow-hidden
+                        ${
+                          isOpen
+                            ? "max-h-[500px] opacity-100 mt-4 pb-1"
+                            : "max-h-0 opacity-0"
+                        }
+                      `}
+                  >
+                    <p className="text-lg">{faq.answer}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </section>
   );
 };
