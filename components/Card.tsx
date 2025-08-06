@@ -5,9 +5,11 @@ type CardProps = {
   link: string;
   bannerColor: string;
   iconSrc: string;
+  title: string;
+  content: string;
 };
 
-const Card = ({ link, bannerColor, iconSrc }: CardProps) => {
+const Card = ({ link, bannerColor, iconSrc, title, content }: CardProps) => {
   return (
     <a
       href={link}
@@ -16,25 +18,35 @@ const Card = ({ link, bannerColor, iconSrc }: CardProps) => {
       className="
       group
       rounded-2xl 
-      h-[400px] 
-      w-[300px] 
+      h-[600px] 
+      w-[400px] 
       m-5 
-      bg-white/25 
-      hover:bg-white/70 
+      bg-white/70 
+      hover:bg-white/85
       transition 
       duration-300 
       shadow-md 
       hover:shadow-2xl 
       hover:scale-105 
       transform
-      cursor-pointer"
+      cursor-pointer
+      p-5
+      flex
+      flex-col
+      gap-5"
     >
       <div
-        className="h-20 w-full flex items-center justify-center rounded-t-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+        className="h-40 flex items-center justify-center rounded-2xl"
         style={{ backgroundColor: bannerColor }}
       >
         <Image src={iconSrc} alt="Icon" width={50} height={50} className="" />
       </div>
+      <h3 className="font-bold text-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+        {title}
+      </h3>
+      <p className="text-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+        {content}
+      </p>
     </a>
   );
 };
