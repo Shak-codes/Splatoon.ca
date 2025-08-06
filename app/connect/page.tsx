@@ -6,6 +6,7 @@ import Bluesky from "@/public/social/bluesky.svg";
 import Twitter from "@/public/social/twitter.svg";
 import Discord from "@/public/social/discord.svg";
 import PageHeader from "@/components/PageHeader";
+import { links } from "@/public/constants/links";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -25,21 +26,21 @@ const Connect = () => {
       />
       <main className="flex items-center justify-center flex-grow">
         <Card
-          link="https://bsky.app/profile/splatoon.ca"
+          link={links.bluesky}
           bannerColor={colors.bluesky}
           iconSrc={Bluesky}
           title="Bluesky"
           content="Follow us on Bluesky! We post here frequently regarding the details surrounding our events!"
         />
         <Card
-          link="https://www.twitter.com/SplatoonGTA"
+          link={links.twitter}
           bannerColor={colors.twitter}
           iconSrc={Twitter}
           title="Twitter"
           content="Follow us on Twitter! We haven't posted here for years but maybe that's changed by the time you're looking at this."
         />
         <Card
-          link="https://discord.com/invite/squidsocial"
+          link={links.discord}
           bannerColor={colors.discord}
           iconSrc={Discord}
           title="Discord"
