@@ -1,24 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
-import { colors } from "@/public/constants/colors";
 import Bluesky from "@/public/social/bluesky.svg";
 import Twitter from "@/public/social/twitter.svg";
 import Discord from "@/public/social/discord.svg";
 import PageHeader from "@/components/PageHeader";
-import { links } from "@/public/constants/links";
-
-const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Events", href: "/events" },
-  { title: "Connect", href: "/connect" },
-  { title: "FAQ", href: "/faq" },
-];
+import { CardData } from "./constants";
+import { navLinks } from "@/public/constants/nav";
 
 const Connect = () => {
   return (
-    <div className="flex flex-col items-center gap-10 min-h-screen pb-5">
+    <div className="flex flex-col items-center gap-5 min-h-screen pb-5">
       <Navbar config={navLinks} />
       <PageHeader
         title="Want to stay connected?"
@@ -26,25 +18,25 @@ const Connect = () => {
       />
       <main className="flex items-center justify-center flex-grow">
         <Card
-          link={links.bluesky}
-          bannerColor={colors.bluesky}
+          link={CardData.bluesky.link}
+          bannerColor={CardData.bluesky.color}
           iconSrc={Bluesky}
-          title="Bluesky"
-          content="Follow us on Bluesky! We post here frequently regarding the details surrounding our events!"
+          title={CardData.bluesky.title}
+          content={CardData.bluesky.content}
         />
         <Card
-          link={links.twitter}
-          bannerColor={colors.twitter}
+          link={CardData.twitter.link}
+          bannerColor={CardData.twitter.color}
           iconSrc={Twitter}
-          title="Twitter"
-          content="Follow us on Twitter! We haven't posted here for years but maybe that's changed by the time you're looking at this."
+          title={CardData.twitter.title}
+          content={CardData.twitter.content}
         />
         <Card
-          link={links.discord}
-          bannerColor={colors.discord}
+          link={CardData.discord.link}
+          bannerColor={CardData.discord.color}
           iconSrc={Discord}
-          title="Discord"
-          content="The best way to keep in touch with us in by joining our Discord. Here you can ask questions not listed in our FAQ, get to know us, and even play some games!"
+          title={CardData.discord.title}
+          content={CardData.discord.content}
         />
       </main>
       <Footer />
