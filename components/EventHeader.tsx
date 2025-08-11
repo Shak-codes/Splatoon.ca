@@ -1,6 +1,8 @@
 import Image from "next/image";
-import TopLeftFlair from "../assets/Flourish16.svg";
-import BottomRightFlair from "../assets/Flourish9.svg";
+import TopLeftFlair from "@/public/flourish/Flourish16.svg";
+import BottomRightFlair from "@/public/flourish/Flourish9.svg";
+import Calendar from "@/public/icons/calendar.svg";
+import Location from "@/public/icons/location.svg";
 
 const flairOffsetMap: Record<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, string> = {
   0: "ml-[-20px]",
@@ -60,9 +62,11 @@ const EventHeader = ({ date, location }: EventHeaderProps) => {
             />
           </div>
         </section>
-        <section className="flex gap-10 mt-[-2rem]">
-          <h2 className="text-xl italic">{date}</h2>
-          <h2 className="text-xl italic">{location}</h2>
+        <section className="flex gap-10 mt-[-3.5rem]">
+          <Image src={Calendar} alt="Calendar Icon" className="w-5 h-5" />
+          <h2 className="text-xl italic ml-[-2rem] pt-0.5">{date}</h2>
+          <Image src={Location} alt="Location Icon" className="w-5 h-5" />
+          <h2 className="text-xl italic ml-[-2rem] pt-0.5">{location}</h2>
         </section>
         <section className="bg-black/50 rounded-sm p-5">
           <p className="font-medium text-lg text-center !leading-6">
