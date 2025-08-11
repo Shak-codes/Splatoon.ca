@@ -21,8 +21,8 @@ const Card = ({ link, bannerColor, iconSrc, title, content }: CardProps) => {
       h-[600px] 
       w-[400px] 
       m-5 
-      bg-white/70 
-      hover:bg-white/85
+      bg-white/60 
+      hover:bg-white/90
       transition 
       duration-300 
       shadow-md 
@@ -41,10 +41,10 @@ const Card = ({ link, bannerColor, iconSrc, title, content }: CardProps) => {
       >
         <Image src={iconSrc} alt="Icon" width={50} height={50} className="" />
       </div>
-      <h3 className="font-bold text-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 className="!text-[var(--secondary-background)] font-bold text-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
         {title}
       </h3>
-      <p className="text-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+      <p className="!text-[var(--secondary-background)] text-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300">
         {content}
       </p>
     </a>

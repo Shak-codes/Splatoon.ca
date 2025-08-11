@@ -10,7 +10,7 @@ const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
         {title}
       </h1>
       <div className="rounded-lg bg-white w-full h-10 flex items-center justify-center">
-        <h2 className="text-center text-2xl text-black font-bold">
+        <h2 className="!text-[var(--secondary-background)] text-center text-2xl font-bold">
           {subtitle}
         </h2>
       </div>

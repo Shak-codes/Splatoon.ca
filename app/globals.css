@@ -44,7 +44,8 @@ body::before {
   transform-origin: center;
 }
 
-h1, h2, p, a {
+h1, h2, h3, p, a {
+  color: aliceblue;
   font-family: var(--font-auro), sans-serif;
   line-height: 1;
 }

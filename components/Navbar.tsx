@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 type LinkConfig = {
@@ -18,7 +17,7 @@ const Navbar = ({ icon, config }: NavbarProps) => {
   const pathname = usePathname();
 
   return (
-    <nav className="w-full px-6 py-4 shadow-md flex justify-around items-center border-b-1 border-white-500 shadow-lg bg-white">
+    <nav className="w-full px-6 py-4 shadow-md flex justify-around items-center bg-black/5 shadow-lg">
       <div className="flex items-center">
         {/* {icon && (
           <Link href="/">
@@ -41,13 +40,13 @@ const Navbar = ({ icon, config }: NavbarProps) => {
                   py-1.75
                   text-black
                   text-center
-                  hover:font-medium
+                  font-medium
+                  hover:font-bold
                   hover:scale-105
-                  hover:bg-[var(--primary-accent)]
                   transition-all 
                   duration-200
                   rounded-sm
-                  ${isActive ? "font-medium" : ""}`}
+                  ${isActive ? "!font-bold" : ""}`}
               >
                 {link.title}
               </Link>
