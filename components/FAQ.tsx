@@ -33,38 +33,41 @@ const FAQ = ({ faqData }: FAQProps) => {
   };
 
   return (
-    <section className="rounded-2xl bg-white text-black py-12 px-6 w-[800px] transition-all duration-300 ease-in-out">
-      <h4 className="">
-        Below is a list of the most commonly asked questions that we get.
-        Hopefully this helps answer some of your questions! In the case that it
-        doesn't, feel free to join our
-        <a href=""> Discord</a> and ask us directly.
-      </h4>
-      {faqData.map((section, sidx) => {
-        return (
-          <div className="mx-auto w-full transition-all duration-300 ease-in-out">
-            <h3 className="text-2xl font-bold p-5 pb-0">{section.section}</h3>
-            {section.faqs.map((faq, fidx) => {
-              const isOpen = open.has(`${sidx}-${fidx}`);
-              return (
-                <div key={`${sidx}-${fidx}`} className="border-b p-5">
-                  <button
-                    onClick={() => toggle(sidx, fidx)}
-                    className="w-full text-left flex justify-between items-center focus:outline-none cursor-pointer"
-                  >
-                    <span className="text-xl font-medium flex-1 min-w-0 pr-4">
-                      {faq.question}
-                    </span>
-                    <span
-                      className={`transform transition-transform duration-300 ease-in-out text-2xl ${
-                        isOpen ? "rotate-45" : "rotate-0"
-                      }`}
+    <main className="flex flex-col justify-center items-center gap-5">
+      <section className="text-center w-[50%] p-5 bg-black/50 rounded-2xl">
+        <h4 className="text-xl text-white font-thin">
+          Need clarification on anything? Below is a list of the most commonly
+          asked questions that we receive.
+        </h4>
+      </section>
+      <section className="rounded-2xl bg-white/90 text-black p-6 w-[50%] minw-[800px] transition-all duration-300 ease-in-out">
+        {faqData.map((section, sidx) => {
+          return (
+            <div className="mx-auto w-full transition-all duration-300 ease-in-out">
+              <h3 className="!text-[var(--secondary-background)] text-2xl font-black p-5 pb-0">
+                {section.section.toUpperCase()}
+              </h3>
+              {section.faqs.map((faq, fidx) => {
+                const isOpen = open.has(`${sidx}-${fidx}`);
+                return (
+                  <div key={`${sidx}-${fidx}`} className="border-b p-5">
+                    <button
+                      onClick={() => toggle(sidx, fidx)}
+                      className="w-full text-left flex justify-between items-center focus:outline-none cursor-pointer"
                     >
-                      +
-                    </span>
-                  </button>
-                  <div
-                    className={`
+                      <span className="!text-[var(--secondary-background)] text-lg font-bold flex-1 min-w-0 pr-4">
+                        {faq.question}
+                      </span>
+                      <span
+                        className={`transform transition-transform duration-300 ease-in-out text-2xl ${
+                          isOpen ? "rotate-45" : "rotate-0"
+                        }`}
+                      >
+                        +
+                      </span>
+                    </button>
+                    <div
+                      className={`
                         transition-all duration-300 ease-in-out overflow-hidden
                         ${
                           isOpen
@@ -72,16 +75,28 @@ const FAQ = ({ faqData }: FAQProps) => {
                             : "max-h-0 opacity-0"
                         }
                       `}
-                  >
-                    <p className="text-lg">{faq.answer}</p>
+                    >
+                      <p className="!text-[var(--secondary-background)] text-lg">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
-    </section>
+                );
+              })}
+            </div>
+          );
+        })}
+      </section>
+      <section className="flex flex-col gap-2 text-center w-[50%] bg-black/50 rounded-2xl p-5">
+        <h2 className="text-3xl text-white font-bold">
+          Can't find your question?
+        </h2>
+        <h4 className="text-xl text-white font-thin">
+          Don't stress over it, sometimes the best questions haven't been asked
+          yet. Ask us in our Discord server and we'll be happy to help!
+        </h4>
+      </section>
+    </main>
   );
 };
 

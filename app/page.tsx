@@ -1,14 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Events", href: "/events" },
-  { title: "Connect", href: "/connect" },
-  { title: "FAQ", href: "/faq" },
-];
+import { navLinks } from "@/public/constants/nav";
 
 export default function Home() {
   return (

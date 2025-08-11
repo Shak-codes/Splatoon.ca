@@ -1,26 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventHeader from "@/components/EventHeader";
-import PageHeader from "@/components/PageHeader";
-
-const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Events", href: "/events" },
-  { title: "Connect", href: "/connect" },
-  { title: "FAQ", href: "/faq" },
-];
+import { navLinks } from "@/public/constants/nav";
 
 const Events = () => {
   return (
-    <div className="flex flex-col items-center gap-10 min-h-screen pb-5">
+    <div className="flex flex-col items-center gap-5 min-h-screen pb-5">
       <Navbar config={navLinks} />
-      <PageHeader
+      {/* <PageHeader
         title="Ready to join us?"
         subtitle="Here's what you need to know"
-      />
-      <main className="flex-grow">
-        <EventHeader />
+      /> */}
+      <main className="w-full flex flex-grow justify-center items-center">
+        <EventHeader date="Sunday September 7th" location="558 Yonge Street" />
       </main>
       <Footer />
     </div>
