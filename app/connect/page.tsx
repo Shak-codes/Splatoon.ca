@@ -6,12 +6,12 @@ import Twitter from "@/public/social/twitter.svg";
 import Discord from "@/public/social/discord.svg";
 import PageHeader from "@/components/PageHeader";
 import { CardData } from "./constants";
-import { navLinks } from "@/public/constants/nav";
+import { navLinks, navSocials } from "@/public/constants/nav";
 
 const Connect = () => {
   return (
     <div className="flex flex-col items-center gap-5 min-h-screen pb-5">
-      <Navbar config={navLinks} />
+      <Navbar config={navLinks} socials={navSocials} />
       <PageHeader
         title="Want to stay connected?"
         subtitle="We got you covered"
