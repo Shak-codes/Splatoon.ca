@@ -37,10 +37,10 @@ body::before {
   background-image: var(--bg-image);
   background-repeat: repeat;
   background-size: 120px;
-  animation: spin 120s linear infinite;
   opacity: 0.2;
   pointer-events: none;
 
+  transform: rotate(30deg);
   transform-origin: center;
 }
 
@@ -62,15 +62,3 @@ h2 {
 p {
   font-weight: 400;
 }
-
-
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
