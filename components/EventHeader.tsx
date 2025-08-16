@@ -3,6 +3,7 @@ import TopLeftFlair from "@/public/flourish/Flourish16.svg";
 import BottomRightFlair from "@/public/flourish/Flourish9.svg";
 import Calendar from "@/public/icons/calendar.svg";
 import Location from "@/public/icons/location.svg";
+import Button from "./Button";
 
 const flairOffsetMap: Record<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, string> = {
   0: "ml-[-20px]",
@@ -78,6 +79,11 @@ const EventHeader = ({ date, location }: EventHeaderProps) => {
             an afternoon of fun, laughter and great vibes at Squid Social 27!
           </p>
         </section>
+        <Button
+          text="Learn More"
+          onClick={() => console.log("Click!")}
+          disabled={false}
+        />
       </section>
     </section>
   );
