@@ -16,27 +16,17 @@ type PageConfig = {
 };
 
 type NavbarProps = {
-  icon?: string;
   config: PageConfig[];
   socials: SocialConfig[];
 };
 
-const Navbar = ({ icon, config, socials }: NavbarProps) => {
+const Navbar = ({ config, socials }: NavbarProps) => {
   const pathname = usePathname();
 
   return (
-    <nav className="w-full px-6 py-4 shadow-md flex justify-around items-center bg-black/5 shadow-lg">
-      <div className="flex items-center">
-        {/* {icon && (
-          <Link href="/">
-            <Image src={icon} alt="Site logo" width={40} height={40} />
-          </Link>
-        )} */}
-        <span className="text-xl font-bold text-white">Splatoon.ca</span>
-      </div>
-
+    <nav className="rellative w-full px-6 py-4 shadow-md flex bg-black/5 shadow-lg">
       {socials.length > 0 && (
-        <div className="flex items-center gap-4">
+        <section className="flex items-center gap-4">
           {socials.map((s) => (
             <Link
               key={s.href}
@@ -53,10 +43,10 @@ const Navbar = ({ icon, config, socials }: NavbarProps) => {
               />
             </Link>
           ))}
-        </div>
+        </section>
       )}
 
-      <ul className="flex items-center gap-10">
+      <ul className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10">
         {config.map((link) => {
           const isActive = pathname === link.href;
           return (
