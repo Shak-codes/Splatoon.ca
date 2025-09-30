@@ -1,0 +1,19 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+    animation-timing-function: ease;
+  }
+  90% {
+    transform: translateX(-99.95%);
+  }
+  100% {
+    transform: translateX(-99.95%);
+  }
+}
+
+.marquee {
+  animation: marquee 10s linear infinite;
+}
