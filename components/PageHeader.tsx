@@ -1,19 +1,35 @@
+import Typography from "./Typography/Typography";
+
 type PageHeaderProps = {
   title: string;
-  subtitle: string;
 };
 
-const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
+const PageHeader = ({ title }: PageHeaderProps) => {
+  const normalized = title.replaceAll("\\N", "\n").replaceAll("\\n", "\n");
+  const lines = normalized.split("\n");
+
   return (
-    <header className="flex flex-col items-start px-5">
-      <h1 className="text-center text-5xl text-white font-bold pb-2">
-        {title}
-      </h1>
-      <div className="rounded-lg bg-white w-full h-10 flex items-center justify-center">
-        <h2 className="!text-[var(--secondary-background)] text-center text-2xl font-bold">
-          {subtitle}
-        </h2>
-      </div>
+    <header>
+      <Typography variant="title" className="text-center">
+        {lines.map((line, lineIdx) => {
+          const chars = Array.from(line);
+          return (
+            <div key={lineIdx}>
+              {chars.map((ch, i) => (
+                <span
+                  key={`${lineIdx}-${i}`}
+                  className={`animate-letter tracking-wider ${
+                    lineIdx > 0 ? "text-outline-custom" : "text-white"
+                  }`}
+                  style={{ animationDelay: `${i * 0.08}s` }}
+                >
+                  {ch === " " ? "\u00A0" : ch}
+                </span>
+              ))}
+            </div>
+          );
+        })}
+      </Typography>
     </header>
   );
 };

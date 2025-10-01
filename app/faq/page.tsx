@@ -51,12 +51,9 @@ const testFAQ = [
 
 const FAQPage = () => {
   return (
-    <div className="flex flex-col items-center gap-5 min-h-screen pb-5">
+    <div className="page-container flex flex-col items-center gap-5 min-h-screen pb-5">
       <Navbar config={navLinks} socials={navSocials} />
-      <PageHeader
-        title="Have some questions?"
-        subtitle="We may have the answers!"
-      />
+      <PageHeader title="FREQUENTLY ASKED\NQUESTIONS" />
       <main className="flex-grow">
         <FAQ faqData={testFAQ} />
       </main>
