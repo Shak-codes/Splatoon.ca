@@ -1,5 +1,6 @@
 import React from "react";
 import "./marquee.css";
+import Subtitle from "./Subtitle";
 
 interface DiagonalGalleryProps {
   images: string[];
@@ -12,7 +13,7 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
     <div className="relative">
       <div
         className="
-          flex gap-3
+          flex gap-[1vw]
           transform rotate-[-3deg]
           marquee
         "
@@ -22,16 +23,17 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
             key={idx}
             src={src}
             alt={`gallery-${idx}`}
-            className="w-61.5 h-100 object-cover shadow-xl brightness-80"
+            className="w-[11.5vw] h-[30vh] object-cover shadow-xl brightness-80"
           />
         ))}
       </div>
-      <img
-        key="logo"
-        src="/logo2.png"
-        alt="Splatoon Ontario Logo"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px]"
-      />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-83/160 w-[600px]">
+        <img key="logo" src="/logo2.png" alt="Splatoon Ontario Logo" />
+        <Subtitle
+          subtitle="Grassroots Splatoon in Toronto"
+          className="-translate-y-[425%]"
+        />
+      </div>
     </div>
   );
 };
