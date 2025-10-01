@@ -1,0 +1,54 @@
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: aliceblue;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.openTop {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.openMid {
+  opacity: 0;
+}
+.openBot {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 40;
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  max-width: 280px;
+  background: var(--secondary-background);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerClosed {
+  transform: translateX(-100%);
+}
