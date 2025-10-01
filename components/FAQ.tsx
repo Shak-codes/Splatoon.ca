@@ -34,14 +34,14 @@ const FAQ = ({ faqData }: FAQProps) => {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center gap-5">
-      <section className="text-center w-[50%] p-5 bg-black/50 rounded-2xl">
+    <main className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]">
+      <section className="text-center p-5 bg-black/50 rounded-2xl">
         <Typography variant="paragraph">
           Need clarification on anything? Below is a list of the most commonly
           asked questions that we receive.
         </Typography>
       </section>
-      <section className="rounded-2xl bg-white/90 text-black p-5 w-[50%] minw-[600px] transition-all duration-300 ease-in-out">
+      <section className="rounded-2xl bg-white/90 text-black p-5 transition-all duration-300 ease-in-out">
         {faqData.map((section, sidx) => {
           return (
             <div className="mx-auto w-full transition-all duration-300 ease-in-out">
@@ -97,7 +97,7 @@ const FAQ = ({ faqData }: FAQProps) => {
           );
         })}
       </section>
-      <section className="flex flex-col gap-2 text-center w-[50%] bg-black/50 rounded-2xl p-5">
+      <section className="flex flex-col gap-2 text-center bg-black/50 rounded-2xl p-5">
         <Typography variant="sectionTitle">
           Can't find your question?
         </Typography>
