@@ -53,7 +53,7 @@ const FAQPage = () => {
   return (
     <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-[100vh] gap-5 justify-items-center">
       <Navbar config={navLinks} socials={navSocials} />
-      <PageHeader title="FREQUENTLY ASKED\NQUESTIONS" />
+      <PageHeader title="FREQUENTLY ASKED\NQUESTIONS" className="text-center" />
       <FAQ faqData={testFAQ} />
       <Footer />
     </div>
