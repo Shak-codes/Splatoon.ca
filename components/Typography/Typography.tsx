@@ -3,20 +3,27 @@ import styles from "./styles.module.css";
 
 type TypographyProps = {
   variant:
+    | "XL"
+    | "LARGE"
     | "title"
     | "subtitle"
     | "sectionTitle"
     | "sectionSubtitle"
     | "subsectionTitle"
     | "subsectionSubtitle"
-    | "paragraph";
+    | "paragraph"
+    | "small";
   children: ReactNode;
   className?: string;
 };
 
 const Typography = ({ variant, children, className = "" }: TypographyProps) => {
   const Tag =
-    variant === "title"
+    variant === "LARGE"
+      ? "h1"
+      : variant === "XL"
+      ? "h1"
+      : variant === "title"
       ? "h1"
       : variant === "subtitle"
       ? "h2"
