@@ -1,14 +1,12 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
-import PageHeader from "@/components/PageHeader";
 import { navLinks, navSocials } from "@/public/constants/nav";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center gap-5 min-h-screen pb-5">
+    <div className="page-container flex flex-col border-3">
       <Navbar config={navLinks} socials={navSocials} />
-      <PageHeader title="Want to know about us?" subtitle="Here's our story" />
-      <main className="flex-grow"></main>
+      <div className="content-container"></div>
       <Footer />
     </div>
   );

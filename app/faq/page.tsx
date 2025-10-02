@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import PageHeader from "@/components/PageHeader";
@@ -51,12 +51,10 @@ const testFAQ = [
 
 const FAQPage = () => {
   return (
-    <div className="page-container flex flex-col items-center gap-5 min-h-screen pb-5">
+    <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-[100vh] gap-5 justify-items-center">
       <Navbar config={navLinks} socials={navSocials} />
       <PageHeader title="FREQUENTLY ASKED\NQUESTIONS" />
-      <main className="flex-grow">
-        <FAQ faqData={testFAQ} />
-      </main>
+      <FAQ faqData={testFAQ} />
       <Footer />
     </div>
   );
