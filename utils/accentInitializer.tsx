@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 
 const setAccent = () => {
+  const bg = "hsla(270, 4%, 10%, 1.00)";
+  const bg2 = "#19181a";
   const primaryBackground = [
     "#cd43a6",
     "#e1820d",
@@ -16,16 +18,16 @@ const setAccent = () => {
     "#5dab21",
   ];
   const secondaryBackground = [
-    "#490e35",
-    "#431c05",
-    "#062d2a",
-    "#372911",
-    "#1d2c07",
-    "#1d184e",
-    "#1e1d49",
-    "#0c0c5a",
-    "#49093f",
-    "#142b08",
+    "hsla(320, 20%, 10%, 1.00)",
+    "hsla(22, 20%, 10%, 1.00)",
+    "hsla(175, 20%, 10%, 1.00)",
+    "hsla(38, 20%, 10%, 1.00)",
+    "hsla(84, 20%, 10%, 1.00)",
+    "hsla(246, 20%, 10%, 1.00)",
+    "hsla(241, 20%, 10%, 1.00)",
+    "hsla(240, 20%, 10%, 1.00)",
+    "hsla(309, 20%, 10%, 1.00)",
+    "hsla(99, 20%, 10%, 1.00)",
   ];
   const primaryAccents = [
     "rgba(26, 26, 174, 1)",
