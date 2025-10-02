@@ -1,6 +1,6 @@
-import Bluesky from "@/public/social/bluesky.svg";
-import Twitter from "@/public/social/twitter.svg";
-import Discord from "@/public/social/discord.svg";
+import Bluesky from "@/public/socials/bluesky.svg";
+import Twitter from "@/public/socials/twitter.svg";
+import Discord from "@/public/socials/discord.svg";
 
 export const navLinks = [
   { title: "HOME", href: "/" },
