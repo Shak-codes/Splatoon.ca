@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${auro.variable} antialiased`}>
+      <body className={`${auro.variable} antialiased min-h-screen`}>
         <AccentInitializer />
         <BackgroundInitializer />
         {children}
