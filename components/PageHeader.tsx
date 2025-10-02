@@ -2,15 +2,21 @@ import Typography from "./Typography/Typography";
 
 type PageHeaderProps = {
   title: string;
+  variant?: "XL" | "LARGE" | "title";
+  className?: string;
 };
 
-const PageHeader = ({ title }: PageHeaderProps) => {
+const PageHeader = ({
+  title,
+  variant = "title",
+  className,
+}: PageHeaderProps) => {
   const normalized = title.replaceAll("\\N", "\n").replaceAll("\\n", "\n");
   const lines = normalized.split("\n");
 
   return (
     <header>
-      <Typography variant="title" className="text-center">
+      <Typography variant={variant} className={`${className}`}>
         {lines.map((line, lineIdx) => {
           const chars = Array.from(line);
           return (
