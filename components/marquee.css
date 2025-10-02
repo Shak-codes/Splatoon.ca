@@ -1,4 +1,4 @@
-@keyframes marquee {
+/* @keyframes marquee {
   0% {
     transform: translateX(0);
   }
@@ -7,10 +7,20 @@
     animation-timing-function: ease;
   }
   90% {
-    transform: translateX(-99.95%);
+    transform: translateX(-100vw);
   }
   100% {
-    transform: translateX(-99.95%);
+    transform: translateX(-100vw);
+  }
+} */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 

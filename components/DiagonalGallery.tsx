@@ -8,9 +8,11 @@ interface DiagonalGalleryProps {
 
 const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
   const loop = [...images, ...images, images[0]];
+  const width = (100 - images.length) / images.length;
+  console.log("Image width: ", width);
 
   return (
-    <div className="relative">
+    <div className="relative border-2">
       <div
         className="
           flex gap-[1vw]
@@ -22,18 +24,22 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
           <img
             key={idx}
             src={src}
-            alt={`gallery-${idx}`}
-            className="w-[11.5vw] h-[30vh] object-cover shadow-xl brightness-80"
+            alt={`Toronto Splatoon 3 Squid Social Photo ${idx}`}
+            style={{ width: `${width}vw`, height: "30vh" }}
+            className="object-cover shadow-xl brightness-80"
           />
         ))}
       </div>
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-83/160 w-[600px]">
-        <img key="logo" src="/logo2.png" alt="Splatoon Ontario Logo" />
-        <Subtitle
-          subtitle="Grassroots Splatoon in Toronto"
-          className="-translate-y-[425%]"
-        />
-      </div>
+      <img
+        key="logo"
+        src="/logo2.png"
+        alt="Splatoon Ontario Logo"
+        className="w-[50%] h-auto"
+      />
+      <Subtitle
+        subtitle="Grassroots Splatoon in Toronto"
+        className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
+      />
     </div>
   );
 };
