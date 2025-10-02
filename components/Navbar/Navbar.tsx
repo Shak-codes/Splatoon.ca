@@ -70,7 +70,7 @@ const Navbar = ({ config, socials }: NavbarProps) => {
                   href={link.href}
                   className={`
                   inline-block min-w-[80px] py-1.5
-                  text-black text-center
+                  text-white text-center
                   font-normal hover:font-bold hover:scale-105
                   transition-all duration-200 rounded-sm
                   ${isActive ? "!font-bold" : ""}
