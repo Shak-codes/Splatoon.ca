@@ -1,0 +1,111 @@
+@media (min-width: 360px) {
+  .tlflairVars {
+    --tlflair-left: -2.4rem;
+    --tlflair-bottom: 1.5rem;
+    --tlflair-width: 2.75rem;
+  }
+  .brflairVars {
+    --brflair-width: 4rem;
+    --brflair-right: -2.5rem;
+    --brflair-bottom: -0.5rem;
+  }
+  .containerVars {
+    --container-width: 300px;
+  }
+}
+
+@media (min-width: 640px) {
+  .tlflairVars {
+    --tlflair-left: -3.9rem;
+    --tlflair-bottom: 1.1rem;
+    --tlflair-width: 4.6rem;
+  }
+  .brflairVars {
+    --brflair-width: 4.4rem;
+    --brflair-right: -2.7rem;
+    --brflair-bottom: -0.6rem;
+  }
+  .containerVars {
+    --container-width: 341px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tlflairVars {
+    --tlflair-left: -4.7rem;
+    --tlflair-bottom: 1.2rem;
+    --tlflair-width: 5.45rem;
+  }
+  .brflairVars {
+    --brflair-width: 4.8rem;
+    --brflair-right: -2.9rem;
+    --brflair-bottom: -0.7rem;
+  }
+  .containerVars {
+    --container-width: 382px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tlflairVars {
+    --tlflair-left: -5.4rem;
+    --tlflair-bottom: 1.15rem;
+    --tlflair-width: 6.3rem;
+  }
+  .brflairVars {
+    --brflair-width: 5.2rem;
+    --brflair-right: -3.1rem;
+    --brflair-bottom: -0.8rem;
+  }
+  .containerVars {
+    --container-width: 423px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tlflairVars {
+    --tlflair-left: -6.1rem;
+    --tlflair-bottom: 1.1rem;
+    --tlflair-width: 7.15rem;
+  }
+  .brflairVars {
+    --brflair-width: 5.6rem;
+    --brflair-right: -3.3rem;
+    --brflair-bottom: -0.8rem;
+  }
+  .containerVars {
+    --container-width: 465px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .tlflairVars {
+    --tlflair-left: -6.75rem;
+    --tlflair-bottom: 1.1rem;
+    --tlflair-width: 8rem;
+  }
+  .brflairVars {
+    --brflair-width: 6rem;
+    --brflair-right: -3.5rem;
+    --brflair-bottom: -0.9rem;
+  }
+  .containerVars {
+    --container-width: 506px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tlflairVars {
+    --tlflair-left: -7.5rem;
+    --tlflair-bottom: 1.25rem;
+    --tlflair-width: 8.85rem;
+  }
+  .brflairVars {
+    --brflair-width: 6.4rem;
+    --brflair-right: -3.75rem;
+    --brflair-bottom: -1rem;
+  }
+  .containerVars {
+    --container-width: 547px;
+  }
+}
