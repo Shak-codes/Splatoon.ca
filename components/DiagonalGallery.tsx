@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import "./marquee.css";
 import Subtitle from "./Subtitle";
@@ -11,23 +11,9 @@ interface DiagonalGalleryProps {
 }
 
 const DiagonalGallery = ({ images, onReady }: DiagonalGalleryProps) => {
-  const loop = [...images, ...images, images[0]];
+  console.log("Passed in", images.length, "images!");
+  const loop = useMemo(() => [...images, ...images, images[0]], [images]);
   const width = (100 - images.length) / images.length;
-  const [loadedCount, setLoadedCount] = useState(0);
-
-  useEffect(() => {
-    setLoadedCount(0);
-  }, [images]);
-
-  const handleLoad = () => {
-    setLoadedCount((prev) => {
-      if (prev + 1 === images.length) {
-        console.log("Loading finished!");
-        onReady?.();
-      }
-      return prev + 1;
-    });
-  };
 
   return (
     <div className="relative">
@@ -47,7 +33,6 @@ const DiagonalGallery = ({ images, onReady }: DiagonalGalleryProps) => {
             height={550}
             className="object-cover shadow-xl brightness-80 max-h-[1100px]"
             style={{ width: `${width}vw`, height: "30vh" }}
-            onLoad={handleLoad}
             sizes="
               (min-width: 1920px) 550px,
               (min-width: 1536px) 500px,
