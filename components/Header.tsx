@@ -1,22 +1,45 @@
 import Typography from "./Typography/Typography";
 
-type PageHeaderProps = {
+type HeaderProps = {
   title: string;
-  variant?: "XL" | "LARGE" | "title";
+  variant:
+    | "hero"
+    | "header"
+    | "title"
+    | "subtitle"
+    | "sectionTitle"
+    | "sectionSubtitle"
+    | "subsectionTitle"
+    | "subsectionSubtitle"
+    | "paragraph";
+  size:
+    | "9xl"
+    | "8xl"
+    | "7xl"
+    | "6xl"
+    | "5xl"
+    | "4xl"
+    | "3xl"
+    | "2xl"
+    | "xl"
+    | "lg"
+    | "base"
+    | "sm";
   className?: string;
 };
 
-const PageHeader = ({
+const Header = ({
   title,
-  variant = "title",
+  variant = "header",
+  size = "8xl",
   className,
-}: PageHeaderProps) => {
+}: HeaderProps) => {
   const normalized = title.replaceAll("\\N", "\n").replaceAll("\\n", "\n");
   const lines = normalized.split("\n");
 
   return (
     <header>
-      <Typography variant={variant} className={`${className}`}>
+      <Typography variant={variant} size={size} className={`${className}`}>
         {lines.map((line, lineIdx) => {
           const chars = Array.from(line);
           return (
@@ -40,4 +63,4 @@ const PageHeader = ({
   );
 };
 
-export default PageHeader;
+export default Header;
