@@ -123,52 +123,34 @@
   line-height: 1;
 }
 
-.XL {
+/* HERO + HEADER */
+.Hero,
+.Header {
   font-weight: 900;
-  font-size: var(--text-9xl);
 }
 
-.LARGE {
-  font-weight: 900;
-  font-size: var(--text-6xl);
-}
-
+/* TITLE */
 .title {
-  font-weight: 900;
-  font-size: var(--text-5xl);
+  font-weight: 800;
 }
 
+/* SUBTITLE */
 .subtitle {
   font-weight: 700;
-  font-size: var(--text-2xl);
 }
 
-.sectionTitle {
-  font-weight: 600;
-  font-size: var(--text-xl);
-}
-
-.sectionSubtitle {
-  font-weight: 500;
-  font-size: var(--text-lg);
-}
-
+/* SECTION + SUBSECTION */
+.sectionTitle,
 .subsectionTitle {
   font-weight: 600;
-  font-size: var(--text-xl);
 }
 
+.sectionSubtitle,
 .subsectionSubtitle {
   font-weight: 500;
-  font-size: var(--text-lg);
 }
 
+/* PARAGRAPH */
 .paragraph {
   font-weight: 400;
-  font-size: var(--text-base);
-}
-
-.small {
-  font-weight: 300;
-  font-size: var(--text-sm);
 }

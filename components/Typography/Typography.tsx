@@ -3,27 +3,40 @@ import styles from "./styles.module.css";
 
 type TypographyProps = {
   variant:
-    | "XL"
-    | "LARGE"
+    | "hero"
+    | "header"
     | "title"
     | "subtitle"
     | "sectionTitle"
     | "sectionSubtitle"
     | "subsectionTitle"
     | "subsectionSubtitle"
-    | "paragraph"
-    | "small";
+    | "paragraph";
+  size:
+    | "9xl"
+    | "8xl"
+    | "7xl"
+    | "6xl"
+    | "5xl"
+    | "4xl"
+    | "3xl"
+    | "2xl"
+    | "xl"
+    | "lg"
+    | "base"
+    | "sm";
   children: ReactNode;
   className?: string;
 };
 
-const Typography = ({ variant, children, className = "" }: TypographyProps) => {
+const Typography = ({
+  variant = "paragraph",
+  children,
+  size = "base",
+  className = "",
+}: TypographyProps) => {
   const Tag =
-    variant === "LARGE"
-      ? "h1"
-      : variant === "XL"
-      ? "h1"
-      : variant === "title"
+    variant === "title"
       ? "h1"
       : variant === "subtitle"
       ? "h2"
@@ -38,7 +51,9 @@ const Typography = ({ variant, children, className = "" }: TypographyProps) => {
       : "p";
 
   return (
-    <Tag className={`${styles.typography} ${styles[variant]} ${className}`}>
+    <Tag
+      className={`${styles.typography} ${styles[variant]} text-${size} ${className}`}
+    >
       {children}
     </Tag>
   );
