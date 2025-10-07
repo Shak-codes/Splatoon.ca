@@ -28,7 +28,7 @@ const Navbar = ({ config, socials }: NavbarProps) => {
 
   return (
     <>
-      <nav className="flex justify-between w-full px-6 py-4 shadow-md bg-black/15 shadow-lg">
+      <nav className="flex justify-between w-full px-6 py-4 shadow-md bg-black/15 shadow-lg h-[60px]">
         {/* tab icon */}
         <button
           className="md:hidden flex flex-col gap-1.5 z-50 relative"
