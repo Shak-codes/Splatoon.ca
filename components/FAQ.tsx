@@ -36,7 +36,7 @@ const FAQ = ({ faqData }: FAQProps) => {
   return (
     <main className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]">
       <section className="text-center p-5 bg-black/50 rounded-2xl">
-        <Typography variant="paragraph">
+        <Typography>
           Need clarification on anything? Below is a list of the most commonly
           asked questions that we receive.
         </Typography>
@@ -47,6 +47,7 @@ const FAQ = ({ faqData }: FAQProps) => {
             <div className="mx-auto w-full transition-all duration-300 ease-in-out">
               <Typography
                 variant="sectionTitle"
+                size="text-lg"
                 className="!text-[var(--secondary-background)] p-5 pb-0"
               >
                 {section.section}
@@ -54,9 +55,10 @@ const FAQ = ({ faqData }: FAQProps) => {
               {section.faqs.map((faq, fidx) => {
                 const isOpen = open.has(`${sidx}-${fidx}`);
                 return (
-                  <div key={`${sidx}-${fidx}`} className="border-b p-5">
+                  <div key={`${sidx}-${fidx}`} className="border-b px-5 py-8">
                     <Typography
                       variant="sectionSubtitle"
+                      size="text-base"
                       className="!text-[var(--secondary-background)]"
                     >
                       <button
@@ -65,7 +67,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                       >
                         {faq.question}
                         <span
-                          className={`transform transition-transform duration-300 ease-in-out text-xl ${
+                          className={`leading-[0] transform transition-transform duration-300 ease-in-out text-xl ${
                             isOpen ? "rotate-45" : "rotate-0"
                           }`}
                         >
@@ -85,6 +87,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                     >
                       <Typography
                         variant="paragraph"
+                        size="text-sm"
                         className="!text-[var(--secondary-background)]"
                       >
                         {faq.answer}
@@ -98,10 +101,10 @@ const FAQ = ({ faqData }: FAQProps) => {
         })}
       </section>
       <section className="flex flex-col gap-2 text-center bg-black/50 rounded-2xl p-5">
-        <Typography variant="sectionTitle">
+        <Typography variant="sectionTitle" size="text-lg">
           Can't find your question?
         </Typography>
-        <Typography variant="paragraph">
+        <Typography>
           Don't stress over it, sometimes the best questions haven't been asked
           yet. Ask us in our Discord server and we'll be happy to help!
         </Typography>
