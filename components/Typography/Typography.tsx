@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styles from "./styles.module.css";
 
 type TypographyProps = {
-  variant:
+  variant?:
     | "hero"
     | "header"
     | "title"
@@ -12,19 +12,19 @@ type TypographyProps = {
     | "subsectionTitle"
     | "subsectionSubtitle"
     | "paragraph";
-  size:
-    | "9xl"
-    | "8xl"
-    | "7xl"
-    | "6xl"
-    | "5xl"
-    | "4xl"
-    | "3xl"
-    | "2xl"
-    | "xl"
-    | "lg"
-    | "base"
-    | "sm";
+  size?:
+    | "text-9xl"
+    | "text-8xl"
+    | "text-7xl"
+    | "text-6xl"
+    | "text-5xl"
+    | "text-4xl"
+    | "text-3xl"
+    | "text-2xl"
+    | "text-xl"
+    | "text-lg"
+    | "text-base"
+    | "text-sm";
   children: ReactNode;
   className?: string;
 };
@@ -32,7 +32,7 @@ type TypographyProps = {
 const Typography = ({
   variant = "paragraph",
   children,
-  size = "base",
+  size = "text-base",
   className = "",
 }: TypographyProps) => {
   const Tag =
@@ -52,7 +52,7 @@ const Typography = ({
 
   return (
     <Tag
-      className={`${styles.typography} ${styles[variant]} text-${size} ${className}`}
+      className={`${styles.typography} ${styles[variant]} ${size} ${className}`}
     >
       {children}
     </Tag>
