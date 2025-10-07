@@ -13,25 +13,25 @@ type HeaderProps = {
     | "subsectionSubtitle"
     | "paragraph";
   size:
-    | "9xl"
-    | "8xl"
-    | "7xl"
-    | "6xl"
-    | "5xl"
-    | "4xl"
-    | "3xl"
-    | "2xl"
-    | "xl"
-    | "lg"
-    | "base"
-    | "sm";
+    | "text-9xl"
+    | "text-8xl"
+    | "text-7xl"
+    | "text-6xl"
+    | "text-5xl"
+    | "text-4xl"
+    | "text-3xl"
+    | "text-2xl"
+    | "text-xl"
+    | "text-lg"
+    | "text-base"
+    | "text-sm";
   className?: string;
 };
 
 const Header = ({
   title,
   variant = "header",
-  size = "8xl",
+  size = "text-8xl",
   className,
 }: HeaderProps) => {
   const normalized = title.replaceAll("\\N", "\n").replaceAll("\\n", "\n");
@@ -62,5 +62,7 @@ const Header = ({
     </header>
   );
 };
+
+// Maybe use "text-[var(--primary-background)]" for secondary line color
 
 export default Header;
