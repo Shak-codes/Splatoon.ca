@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import "./marquee.css";
-import Subtitle from "./Subtitle";
 
 interface DiagonalGalleryProps {
   images: string[];
-  onReady?: () => void;
 }
 
-const DiagonalGallery = ({ images, onReady }: DiagonalGalleryProps) => {
+const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
   console.log("Passed in", images.length, "images!");
   const loop = useMemo(() => [...images, ...images, images[0]], [images]);
   const width = (100 - images.length) / images.length;
@@ -45,18 +43,6 @@ const DiagonalGallery = ({ images, onReady }: DiagonalGalleryProps) => {
           />
         ))}
       </div>
-
-      {/* <Image
-        src="/logo2.png"
-        alt="Splatoon Ontario Logo"
-        width={800}
-        height={400}
-        className="w-[50%] h-auto"
-      />
-      <Subtitle
-        subtitle="Grassroots Splatoon in Toronto"
-        className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
-      /> */}
     </div>
   );
 };
