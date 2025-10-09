@@ -52,7 +52,7 @@ const Typography = ({
 
   return (
     <Tag
-      className={`${styles.typography} ${styles[variant]} ${size} ${className}`}
+      className={`${styles.size} ${styles.typography} ${styles[variant]} ${size} ${className}`}
     >
       {children}
     </Tag>

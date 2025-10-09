@@ -1,5 +1,5 @@
 @media (min-width: 360px) {
-  :root {
+  .size {
     --text-sm: 0.6rem;
     --text-base: 0.75rem;
     --text-lg: 1rem;
@@ -16,7 +16,7 @@
 }
 
 @media (min-width: 640px) {
-  :root {
+  .size {
     --text-sm: 0.75rem;
     --text-base: 0.9rem;
     --text-lg: 1.15rem;
@@ -33,7 +33,7 @@
 }
 
 @media (min-width: 768px) {
-  :root {
+  .size {
     --text-sm: 0.9rem;
     --text-base: 1.05rem;
     --text-lg: 1.3rem;
@@ -50,7 +50,7 @@
 }
 
 @media (min-width: 1024px) {
-  :root {
+  .size {
     --text-sm: 1.05rem;
     --text-base: 1.2rem;
     --text-lg: 1.45rem;
@@ -67,7 +67,7 @@
 }
 
 @media (min-width: 1280px) {
-  :root {
+  .size {
     --text-sm: 1.2rem;
     --text-base: 1.35rem;
     --text-lg: 1.6rem;
@@ -84,7 +84,7 @@
 }
 
 @media (min-width: 1536px) {
-  :root {
+  .size {
     --text-sm: 1.35rem;
     --text-base: 1.5rem;
     --text-lg: 1.75rem;
@@ -101,7 +101,7 @@
 }
 
 @media (min-width: 1920px) {
-  :root {
+  .size {
     --text-sm: 1.5rem;
     --text-base: 1.65rem;
     --text-lg: 1.9rem;
