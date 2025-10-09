@@ -44,11 +44,14 @@ const FAQ = ({ faqData }: FAQProps) => {
       <section className="rounded-2xl bg-white/90 text-black p-5 transition-all duration-300 ease-in-out">
         {faqData.map((section, sidx) => {
           return (
-            <div className="mx-auto w-full transition-all duration-300 ease-in-out">
+            <div
+              key={sidx}
+              className="mx-auto w-full transition-all duration-300 ease-in-out"
+            >
               <Typography
                 variant="sectionTitle"
                 size="text-lg"
-                className="!text-[var(--secondary-background)] p-5 pb-0"
+                className="!text-[var(--background)] p-5 pb-0"
               >
                 {section.section}
               </Typography>
@@ -59,7 +62,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                     <Typography
                       variant="sectionSubtitle"
                       size="text-base"
-                      className="!text-[var(--secondary-background)]"
+                      className="!text-[var(--background)]"
                     >
                       <button
                         onClick={() => toggle(sidx, fidx)}
@@ -88,7 +91,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                       <Typography
                         variant="paragraph"
                         size="text-sm"
-                        className="!text-[var(--secondary-background)]"
+                        className="!text-[var(--background)]"
                       >
                         {faq.answer}
                       </Typography>
@@ -102,11 +105,12 @@ const FAQ = ({ faqData }: FAQProps) => {
       </section>
       <section className="flex flex-col gap-2 text-center bg-black/50 rounded-2xl p-5">
         <Typography variant="sectionTitle" size="text-lg">
-          Can't find your question?
+          Can&apos;t find your question?
         </Typography>
         <Typography>
-          Don't stress over it, sometimes the best questions haven't been asked
-          yet. Ask us in our Discord server and we'll be happy to help!
+          Don&apos;t stress over it, sometimes the best questions haven&apos;t
+          been asked yet. Ask us in our Discord server and we&apos;ll be happy
+          to help!
         </Typography>
       </section>
     </main>

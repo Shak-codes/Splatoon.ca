@@ -48,7 +48,7 @@ const Header = ({
                 <span
                   key={`${lineIdx}-${i}`}
                   className={`animate-letter tracking-wider ${
-                    lineIdx > 0 ? "text-outline-custom" : "text-white"
+                    lineIdx > 0 ? "text-[var(--primary)]" : "text-white"
                   }`}
                   style={{ animationDelay: `${i * 0.08}s` }}
                 >
@@ -63,6 +63,6 @@ const Header = ({
   );
 };
 
-// Maybe use "text-[var(--primary-background)]" for secondary line color
+// Maybe use "text-[var(--primary)]" for secondary line color
 
 export default Header;

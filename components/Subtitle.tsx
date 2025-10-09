@@ -6,12 +6,12 @@ type SubtitleProps = {
   className?: string;
 };
 
-const Subtitle = ({ subtitle, delay = 0 }: SubtitleProps) => {
+const Subtitle = ({ subtitle, delay = 0, className }: SubtitleProps) => {
   return (
     <Typography
       variant="subtitle"
       size="text-lg"
-      className="rounded-lg bg-white p-2 !text-[var(--secondary-background)] text-center"
+      className={`rounded-lg bg-white p-2 !text-[var(--background)] text-center ${className}`}
     >
       <span key={subtitle}>
         {subtitle.split("").map((c, i) => (
