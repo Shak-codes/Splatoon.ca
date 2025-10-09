@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AccentInitializer } from "@/utils/accentInitializer";
 import localFont from "next/font/local";
 import { BackgroundInitializer } from "@/utils/backgroundInitializer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const auro = localFont({
   src: [
@@ -74,7 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${auro.variable} antialiased min-h-screen`}>
+      <body
+        className={`${auro.variable} antialiased min-h-screen flex flex-col items-center`}
+      >
         <AccentInitializer />
         <BackgroundInitializer />
         {children}
