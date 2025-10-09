@@ -5,11 +5,11 @@ import { useEffect } from "react";
 const setAccent = () => {
   const bg = "hsla(270, 4%, 10%, 1.00)";
   const bg2 = "#19181a";
-  const primaryBackground = [
+  const primary = [
     "#cd43a6",
     "#e1820d",
     "#31c4a9",
-    "#cdcd34",
+    // "#cdcd34",
     "#94c921",
     "#3a28c4",
     "#4e4edd",
@@ -17,12 +17,12 @@ const setAccent = () => {
     "#b62ea7",
     "#5dab21",
   ];
-  const secondaryBackground = [
-    "hsla(320, 20%, 10%, 1.00)",
-    "hsla(22, 20%, 10%, 1.00)",
-    "hsla(175, 20%, 10%, 1.00)",
-    "hsla(38, 20%, 10%, 1.00)",
-    "hsla(84, 20%, 10%, 1.00)",
+  const background = [
+    "hsla(317, 50%, 10%, 1.00)",
+    "hsla(33, 70%, 10%, 1.00)",
+    "hsla(169, 50%, 10%, 1.00)",
+    // "hsla(60, 60%, 10%, 1.00)",
+    "hsla(79, 70%, 10%, 1.00)",
     "hsla(246, 20%, 10%, 1.00)",
     "hsla(241, 20%, 10%, 1.00)",
     "hsla(240, 20%, 10%, 1.00)",
@@ -30,10 +30,10 @@ const setAccent = () => {
     "hsla(99, 20%, 10%, 1.00)",
   ];
   const primaryAccents = [
-    "rgba(26, 26, 174, 1)",
-    "rgba(160, 201, 55, 1)",
-    "rgba(190, 205, 65, 1)",
-    "rgba(222, 102, 36, 1)",
+    "rgba(227, 141, 36, 1)",
+    "rgba(186, 48, 176, 1)",
+    "rgba(100, 38, 207, 1)",
+    // "rgba(222, 102, 36, 1)",
     "rgba(205, 81, 10, 1)",
     "rgba(193, 45, 116, 1)",
     "rgba(27, 190, 171, 1)",
@@ -46,7 +46,7 @@ const setAccent = () => {
     "rgba(227, 141, 36, 1)",
     "rgba(186, 48, 176, 1)",
     "rgba(49, 196, 169, 1)",
-    "rgba(205, 205, 52, 1)",
+    // "rgba(205, 205, 52, 1)",
     "rgba(148, 201, 33, 1)",
     "rgba(58, 40, 196, 1)",
     "rgba(78, 78, 221, 1)",
@@ -55,29 +55,29 @@ const setAccent = () => {
     "rgba(93, 171, 33, 1)",
   ];
 
-  const length = primaryBackground.length;
+  const length = primary.length;
 
-  let pb = sessionStorage.getItem("primary-background");
-  let sb = sessionStorage.getItem("secondary-background");
-  let pa = sessionStorage.getItem("primary-accent");
-  let sa = sessionStorage.getItem("secondary-accent");
+  let p = sessionStorage.getItem("primary");
+  let b = sessionStorage.getItem("background");
+  let a = sessionStorage.getItem("accent");
 
-  if (!pb || !sb || !pa || !sa) {
-    const idx = Math.floor(Math.random() * length);
-    pb = primaryBackground[idx];
-    sb = secondaryBackground[idx];
-    pa = primaryAccents[idx];
-    sa = secondaryAccents[idx];
-    sessionStorage.setItem("primary-background", pb);
-    sessionStorage.setItem("secondary-background", sb);
-    sessionStorage.setItem("primary-accent", pa);
-    sessionStorage.setItem("secondary-accent", sa);
+  if (!p || !b || !a) {
+    const idx = 0;
+    console.log("bg:", primary[idx]);
+    p = primary[idx];
+    b = background[idx];
+    a = primaryAccents[idx];
+    //a = secondaryAccents[idx];
+    // sessionStorage.setItem("accent", a);
+    sessionStorage.setItem("primary", p);
+    sessionStorage.setItem("background", b);
+    sessionStorage.setItem("accent", a);
   }
 
-  document.documentElement.style.setProperty("--primary-background", pb);
-  document.documentElement.style.setProperty("--secondary-background", sb);
-  document.documentElement.style.setProperty("--primary-accent", pa);
-  document.documentElement.style.setProperty("--secondary-accent", sa);
+  document.documentElement.style.setProperty("--primary", p);
+  document.documentElement.style.setProperty("--background", b);
+  document.documentElement.style.setProperty("--accent", a);
+  // document.documentElement.style.setProperty("--accent", a);
 };
 
 export const AccentInitializer = () => {
