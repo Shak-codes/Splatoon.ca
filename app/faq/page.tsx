@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
-import PageHeader from "@/components/PageHeader";
 import { navLinks, navSocials } from "@/public/constants/nav";
+import Header from "@/components/Header";
 
 const testFAQ = [
   {
@@ -51,9 +51,14 @@ const testFAQ = [
 
 const FAQPage = () => {
   return (
-    <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-[100vh] gap-5 justify-items-center">
+    <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-screen gap-5 justify-items-center">
       <Navbar config={navLinks} socials={navSocials} />
-      <PageHeader title="FREQUENTLY ASKED\NQUESTIONS" className="text-center" />
+      <Header
+        variant="header"
+        size="text-6xl"
+        title="Frequently Asked\NQuestions"
+        className="text-center"
+      />
       <FAQ faqData={testFAQ} />
       <Footer />
     </div>
