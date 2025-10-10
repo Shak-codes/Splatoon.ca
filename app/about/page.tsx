@@ -133,7 +133,7 @@ const About = () => {
                       width={width}
                       height={height}
                       alt={`${idx}`}
-                      className="max-h-[400px]"
+                      className="max-h-[400px] max-w-[50%]"
                     />
                   )}
                   <div className="space-y-2">
@@ -162,9 +162,10 @@ const About = () => {
                   {!isEven && (
                     <Image
                       src={images[0]}
-                      width={250}
-                      height={100}
+                      width={width}
+                      height={height}
                       alt={`${idx}`}
+                      className="max-h-[400px] max-w-[50%]"
                     />
                   )}
                 </section>
