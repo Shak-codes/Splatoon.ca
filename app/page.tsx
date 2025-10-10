@@ -1,33 +1,31 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import { navLinks, navSocials } from "@/public/constants/nav";
 import DiagonalGallery from "@/components/DiagonalGallery";
 import { useBreakpoint } from "@/utils/useBreakpoint";
-import clsx from "clsx";
+import Image from "next/image";
+import Subtitle from "@/components/Subtitle";
+import { SQUIDSOCIAL_IMGS } from "./constants";
 
 export default function Home() {
   const bp = useBreakpoint();
 
   const count =
     bp === "5xl"
-      ? 16
+      ? 18
       : bp === "4xl"
-      ? 14
+      ? 16
       : bp === "3xl"
-      ? 12
+      ? 14
       : bp === "2xl"
-      ? 10
+      ? 12
       : bp === "xl"
-      ? 8
+      ? 10
       : bp === "lg"
-      ? 6
-      : 4;
-  const images = useMemo(
-    () => Array.from({ length: count }, (_, i) => `/squidsocial/${i + 1}.webp`),
-    [count]
-  );
+      ? 8
+      : 6;
+  const images = SQUIDSOCIAL_IMGS.slice(0, count);
 
   return (
     <div className="relative min-h-screen">
@@ -37,9 +35,28 @@ export default function Home() {
         }
       >
         <Navbar config={navLinks} socials={navSocials} />
-        <main className="flex flex-grow flex-col justify-center align-center gap-1">
+        <main className="flex flex-grow flex-col justify-center items-center gap-1">
           <DiagonalGallery images={images} />
-          <section className="z-10" />
+          <section
+            className="
+              absolute
+              flex flex-col justify-center items-center
+              min-w-[300px] max-w-[550px]
+              top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2
+            "
+          >
+            <Image
+              src="/logo2.png"
+              alt="Splatoon Ontario Logo"
+              width={800}
+              height={400}
+              className="h-auto"
+            />
+            <Subtitle
+              subtitle="Grassroots Splatoon in Toronto"
+              className="absolute top-[78%] w-full"
+            />
+          </section>
         </main>
         <Footer />
       </div>

@@ -5,7 +5,11 @@ import Image from "next/image";
 import "./marquee.css";
 
 interface DiagonalGalleryProps {
-  images: string[];
+  images: {
+    url: string;
+    width: number;
+    height: number;
+  }[];
 }
 
 const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
@@ -22,13 +26,13 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
           marquee
         "
       >
-        {loop.map((src, idx) => (
+        {loop.map((image, idx) => (
           <Image
             key={idx}
-            src={src}
+            src={image.url}
             alt={`Toronto Splatoon 3 Squid Social Photo ${idx}`}
-            width={1100}
-            height={550}
+            width={image.width}
+            height={image.height}
             className="object-cover shadow-xl brightness-80 max-h-[1100px]"
             style={{ width: `${width}vw`, height: "30vh" }}
             sizes="
