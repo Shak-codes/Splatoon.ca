@@ -1,3 +1,18 @@
+.size {
+  --text-sm: 0.45rem;
+  --text-base: 0.6rem;
+  --text-lg: 0.85rem;
+  --text-xl: 1.1rem;
+  --text-2xl: 1.35rem;
+  --text-3xl: 1.6rem;
+  --text-4xl: 1.85rem;
+  --text-5xl: 2.1rem;
+  --text-6xl: 2.5rem;
+  --text-7xl: 3rem;
+  --text-8xl: 4rem;
+  --text-9xl: 6rem;
+}
+
 @media (min-width: 360px) {
   .size {
     --text-sm: 0.6rem;
