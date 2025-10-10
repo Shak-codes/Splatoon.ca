@@ -17,7 +17,6 @@ export const SECTIONS = [
     subtitle: "The very event deciding the entire future of Squid Social.",
     text: `As the first event came together, Pastecat found himself taking on the entire project alone. Hosted at A&C Games in Toronto, the first Squid Social was a complete success even despite the mental and financial burden of working with the Wii U in a LAN environment. This sparked the start of a grassroots community and proved that Splatoon 
   had genuine potential to be longstanding.`,
-
     images: ["/posters/1.webp"],
   },
   {
