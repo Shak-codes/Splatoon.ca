@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import styles from "./styles.module.css";
 
 interface ImageCarouselProps {
   images: { src: string; width: number; height: number }[];
