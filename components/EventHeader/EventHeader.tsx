@@ -5,23 +5,26 @@ import Button from "../Button";
 import Calendar from "@/public/icons/calendar.svg";
 import Location from "@/public/icons/location.svg";
 import Typography from "../Typography/Typography";
-import PageHeader from "../PageHeader";
+import PageHeader from "../Header";
 import styles from "./styles.module.css";
 
-const flairOffsetMap: Record<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, string> = {
-  0: "ml-[-20px]",
-  1: "ml-[-5px]",
-  2: "ml-[-5px]",
-  3: "ml-[-10px]",
-  4: "ml-[-15px]",
-  5: "ml-[-11px]",
-  6: "ml-[-10px]",
-  7: "ml-[-35px]",
-  8: "ml-[-6px]",
-  9: "ml-[-13px]",
+const flairOffsetMap: Record<
+  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9,
+  number | string
+> = {
+  0: 0,
+  1: 9,
+  2: 10,
+  3: 10,
+  4: 5,
+  5: 10,
+  6: 3,
+  7: 6,
+  8: 3,
+  9: 1,
 };
 
-const eventNumber = 27;
+const eventNumber = 20;
 const lastDigit = Number(String(eventNumber).slice(-1)) as
   | 0
   | 1
@@ -39,53 +42,58 @@ const flairOffset = flairOffsetMap[lastDigit];
 type EventHeaderProps = {
   date: string;
   location: string;
+  href?: string;
+  className?: string;
 };
 
-const EventHeader = ({ date, location }: EventHeaderProps) => {
+const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
+  const flairBaseRight = "var(--brflair-right)";
+  const flairOffsetPx = `0%`;
+  const flairRightValue = `calc(${flairBaseRight} + ${flairOffsetPx})`;
   return (
-    <section
-      className={`${styles.containerVars} flex flex-col items-start gap-5 w-[var(--container-width)]`}
-    >
-      <section className="relative flex items-center">
+    <section className={`${styles.headerContainer} ${className}`}>
+      <section className="relative w-full flex items-center justify-center">
         <PageHeader
-          variant="LARGE"
+          variant="header"
+          size="text-6xl"
           title="SQUID\NSOCIAL"
           className="text-end"
         />
         <PageHeader
-          variant="XL"
+          variant="header"
+          size="text-9xl"
           title={eventNumber.toString()}
           className="mt-[calc(var(--text-sm)/2)] !leading-[0]"
         />
         <Image
           src={TopLeftFlair}
           alt="Social Flair"
-          className={`${styles.tlflairVars} absolute left-[var(--tlflair-left)] bottom-[var(--tlflair-bottom)] w-[var(--tlflair-width)] h-auto`}
+          className={styles.tlflair}
+          style={{ transform: `translateX(${flairOffset}%)` }}
         />
-
         <Image
           src={BottomRightFlair}
           alt="Event Number Flair"
-          className={`${styles.brflairVars} absolute right-[var(--brflair-right)] bottom-[var(--brflair-bottom)] w-[var(--brflair-width)] h-auto`}
+          className={styles.brflair}
         />
       </section>
 
-      <section className="flex gap-10 -mt-[var(--text-base)] border-2">
+      <section className="w-full justify-center flex gap-10 -mt-[var(--text-base)]">
         <section className="flex justify-center items-center gap-2">
           <Image src={Calendar} alt="Calendar Icon" width={20} height={20} />
-          <Typography variant="small">{date}</Typography>
+          <Typography size="text-sm">{date}</Typography>
         </section>
         <section className="flex justify-center items-center gap-2">
           <Image src={Location} alt="Location Icon" width={20} height={20} />
-          <Typography variant="small">{location}</Typography>
+          <Typography size="text-sm">{location}</Typography>
         </section>
       </section>
 
       <section className="bg-black/50 rounded-sm p-5">
-        <Typography variant="small">
+        <Typography size="text-sm">
           About once every month we host our signature Squid Social event in the
-          heart of the Toronto. Whether you're a long time player or new to the
-          community, these events are the perfect way to connect with fellow
+          heart of the Toronto. Whether you&apos;re a long time player or new to
+          the community, these events are the perfect way to connect with fellow
           fans from around the GTA. Mark your calendars, the next Squid Social
           is officially locked in for Sunday September 7th! Join us for an
           afternoon of fun, laughter and great vibes at Squid Social 27!
@@ -95,6 +103,7 @@ const EventHeader = ({ date, location }: EventHeaderProps) => {
         text="Learn More"
         onClick={() => console.log("Click!")}
         disabled={false}
+        href={href}
       />
     </section>
   );
