@@ -5,25 +5,42 @@ import { navLinks, navSocials } from "@/public/constants/nav";
 import Typography from "@/components/Typography/Typography";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
-import InteractiveRotatedGallery from "@/components/InteractiveRotatedGallery";
 import { POSTERS } from "./constants";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
+import Checklist from "@/components/Checklist";
+import { CHECKLIST } from "./constants";
 
 const Events = () => {
+  const items = [
+    {
+      id: "1",
+      name: "Sign in to your account",
+      description: "Make sure you’re logged into your profile.",
+      mandatory: true,
+    },
+    {
+      id: "2",
+      name: "Verify your email",
+      description: "Click the verification link sent to your inbox.",
+      mandatory: true,
+    },
+    {
+      id: "3",
+      name: "Customize your preferences",
+      description: "Optional but recommended for a better experience.",
+    },
+  ];
   return (
     <div className="flex flex-col items-center gap-1 min-h-screen pb-1">
       <Navbar config={navLinks} socials={navSocials} />
-      <main className={`mainContainer justify-center`}>
+      <main className="mainContainer justify-center">
         <EventHeader
-          date="Sunday September 28th"
+          date="Sunday October 26th"
           location="558 Yonge Street"
           href="#details"
           className="min-h-[calc(100vh-60px)]"
         />
-        <section
-          id="details"
-          className="grid items-center min-h-screen w-[var(--width)]"
-        >
+        <section id="details" className="grid items-center min-h-screen">
           <div className="bg-black/40 p-5 rounded-xl space-y-2">
             <Header variant="sectionTitle" size="text-5xl" title="DETAILS" />
             <Typography>
@@ -51,6 +68,7 @@ const Events = () => {
               order to play. Make sure to pack the night before and double check
               in the morning that you got everything on the list.
             </Typography>
+            <Checklist title="" items={CHECKLIST} />
             <Button text="Posters" disabled={false} href="#posters" />
           </div>
         </section>
