@@ -133,7 +133,7 @@
 }
 
 .typography {
-  color: aliceblue;
+  color: oklch(98.5% 0 0);
   font-family: var(--font-auro), sans-serif;
   line-height: 1;
 }
@@ -168,4 +168,5 @@
 /* PARAGRAPH */
 .paragraph {
   font-weight: 400;
+  color: oklch(97% 0 0);
 }
