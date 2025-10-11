@@ -99,6 +99,25 @@ body::before {
   width: 200px;
 }
 
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: calc(var(--spacing) * 2);
+}
+
+.sectionContent {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: calc(var(--spacing) * 5);
+  border-radius: 0.5rem;
+}
+
+.sectionContent > * + * {
+  margin-top: calc(var(--spacing) * 4);
+}
+
 @media (min-width: 360px) {
   .mainContainer {
     width: 300px;

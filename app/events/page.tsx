@@ -33,15 +33,15 @@ const Events = () => {
   return (
     <div className="flex flex-col items-center gap-1 min-h-screen pb-1">
       <Navbar config={navLinks} socials={navSocials} />
-      <main className="mainContainer justify-center">
+      <main className="mainContainer">
         <EventHeader
           date="Sunday October 26th"
           location="558 Yonge Street"
           href="#details"
           className="min-h-[calc(100vh-60px)]"
         />
-        <section id="details" className="grid items-center min-h-screen">
-          <div className="bg-black/40 p-5 rounded-xl space-y-2">
+        <section id="details" className="mainSection">
+          <div className="sectionContent">
             <Header variant="sectionTitle" size="text-5xl" title="DETAILS" />
             <Typography>
               We pride ourselves on bringing together people from all facets of
@@ -50,33 +50,22 @@ const Events = () => {
               time! Hosted at Invictus Gaming Lounge, we run competitive and
               casual matches for all to enjoy!
             </Typography>
-            <Button text="What to bring" disabled={false} href="#belongings" />
+            <Button text="What to bring" disabled={false} href="#checklist" />
           </div>
         </section>
-        <section
-          id="belongings"
-          className="grid items-center min-h-screen w-[var(--width)]"
-        >
-          <div className="bg-black/40 p-5 rounded-xl space-y-2">
-            <Header
-              variant="sectionTitle"
-              size="text-5xl"
-              title="WHAT TO BRING"
-            />
+        <section id="checklist" className="mainSection">
+          <div className="sectionContent">
+            <Header variant="sectionTitle" size="text-5xl" title="CHECKLIST" />
             <Typography>
               As an attendee there&apos;s a few things you have to bring in
-              order to play. Make sure to pack the night before and double check
-              in the morning that you got everything on the list.
+              order to play. Make sure to pack early and double check in the
+              morning that you got everything on the list.
             </Typography>
-            <Checklist title="" items={CHECKLIST} />
-            <Button text="Posters" disabled={false} href="#posters" />
+            <Checklist items={CHECKLIST} />
           </div>
         </section>
-        <section
-          id="posters"
-          className="grid items-center min-h-screen w-[var(--width)]"
-        >
-          <div className="bg-black/40 p-5 rounded-xl space-y-2">
+        <section id="posters" className="mainSection">
+          <div className="sectionContent">
             <Header variant="sectionTitle" size="text-5xl" title="POSTERS" />
             <Typography>
               At the larger Squid Social events we have posters for sale. These
