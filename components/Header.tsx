@@ -38,12 +38,12 @@ const Header = ({
   const lines = normalized.split("\n");
 
   return (
-    <header>
+    <>
       <Typography variant={variant} size={size} className={`${className}`}>
         {lines.map((line, lineIdx) => {
           const chars = Array.from(line);
           return (
-            <div key={lineIdx}>
+            <span key={lineIdx} className="block">
               {chars.map((ch, i) => (
                 <span
                   key={`${lineIdx}-${i}`}
@@ -55,11 +55,11 @@ const Header = ({
                   {ch === " " ? "\u00A0" : ch}
                 </span>
               ))}
-            </div>
+            </span>
           );
         })}
       </Typography>
-    </header>
+    </>
   );
 };
 
