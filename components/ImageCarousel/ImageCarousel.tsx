@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import styles from "./styles.module.css";
 
 interface ImageCarouselProps {
   images: { src: string; width: number; height: number }[];
@@ -21,13 +22,13 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
   };
 
   return (
-    <section className="relative flex justify-center items-center overflow-hidden w-full h-[40vh]">
+    <section className={styles.carouselContainer}>
       <div className="relative w-full h-full flex justify-center items-center preserve-3d">
         {images.map(({ src, width, height }, idx) => {
           const offset = (idx - activeIndex + count) % count;
           const distance = offset > count / 2 ? offset - count : offset;
 
-          const translateX = `${distance * 300}px`;
+          const translateX = `${distance * 90}%`;
           const scale = distance === 0 ? 1 : 0.9;
           const zIndex = count - Math.abs(distance);
           const opacity = Math.abs(distance) > 2 ? 0 : 1;
@@ -39,7 +40,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
             <div
               key={idx}
               onClick={() => handleSelect(idx)}
-              className="absolute transition-all duration-700 ease-in-out"
+              className={styles.posterContainer}
               style={{
                 transform: `
                   perspective(1000px)
@@ -57,7 +58,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                 width={width}
                 height={height}
                 className={`
-                  object-contain w-[300px] h-[30vh] rounded-lg shadow-lg 
+                  object-contain w-full rounded-sm shadow-lg 
                   transition-all duration-500 ease-in-out
                   ${
                     isActive
