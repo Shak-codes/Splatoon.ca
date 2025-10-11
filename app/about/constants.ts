@@ -41,19 +41,19 @@ export const SECTIONS = [
   community that Pastecat fostered himself. This marked the turning point where Squid Social had been recognized 
   as a staple in the Canadian Splatoon scene. What started as a small local gathering had grown into a recognizable 
   part of the greater Splatoon community.`,
-    images: ["/squidsocial/PUGB_Photo_2.webp"],
-    width: 1000,
-    height: 1545,
+    images: ["/squidsocial/fanexpo.webp"],
+    width: 1200,
+    height: 808,
   },
   {
     title: "Passing the Torch",
     subtitle: "Greatness comes in many forms.",
     text: `After years of growth under Pastecat's leadership, the Squid Social events had become a staple in the GTA. 
-  However Pastecat knew it was time for Squid Social to enter a new chapter. Starting with Squid Social 17, Pastecat passed 
+  However Pastecat knew it was time for Squid Social to enter a new chapter. Starting with Squid Social 20, Pastecat passed 
   the torch to IceFlinger. Since then, Ice had continued pushing Pastecat's vision of building a welcoming community for 
   Splatoon players around the GTA.`,
-    images: ["/squidsocial/PUGB_Photo_2.webp"],
-    width: 1000,
-    height: 1545,
+    images: ["/squidsocial/Invictus_Photo_16.webp"],
+    width: 1333,
+    height: 1000,
   },
 ];
