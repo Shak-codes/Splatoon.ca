@@ -38,8 +38,9 @@ body::before {
   opacity: 0.2;
   pointer-events: none;
 
-  transform: rotate(30deg);
+  /* transform: rotate(30deg); */
   transform-origin: center;
+  animation: rotateBg 300s linear infinite;
 }
 
 .text-outline-custom {
@@ -69,6 +70,15 @@ body::before {
   }
 }
 
+@keyframes rotateBg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-letter {
   display: inline-block;
   opacity: 0;
@@ -86,7 +96,25 @@ body::before {
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-  width: 90%;
+  width: 200px;
+}
+
+@media (min-width: 360px) {
+  .mainContainer {
+    width: 300px;
+  }
+}
+
+@media (min-width: 640px) {
+  .mainContainer {
+    width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mainContainer {
+    width: 600px;
+  }
 }
 
 @media (min-width: 1024px) {
