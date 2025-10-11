@@ -60,7 +60,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                   onKeyDown={(e) =>
                     (e.key === "Enter" || e.key === " ") && toggle(sidx, fidx)
                   }
-                  className="border-gray-200 rounded-lg border px-4 py-6 hover:border-[var(--background)] hover:bg-[var(--background)]/20 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-all duration-300 ease-in-out"
+                  className="border-gray-200 rounded-lg border px-4 py-6 hover:border-[var(--primary)] hover:bg-[var(--background)]/20 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-all duration-300 ease-in-out"
                 >
                   <Typography
                     variant="sectionSubtitle"
@@ -95,7 +95,7 @@ const FAQ = ({ faqData }: FAQProps) => {
         ))}
       </section>
 
-      <section className="flex flex-col gap-2 text-center bg-black/50 rounded-2xl p-5">
+      <section className="flex flex-col gap-2 text-center bg-black/50 rounded-lg p-5">
         <Typography variant="sectionTitle" size="text-lg">
           Can&apos;t find your question?
         </Typography>
