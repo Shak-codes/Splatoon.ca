@@ -148,14 +148,14 @@ export const CHECKLIST = [
     mandatory: false,
   },
   {
-    id: "6",
+    id: "7",
     name: "LAN Adapter",
     description:
       "Only needed if you have a Switch Dock that doesn't have a built in LAN port.",
     mandatory: false,
   },
   {
-    id: "7",
+    id: "8",
     name: "Headset with Microphone and 3.5mm cable",
     description: `Only needed if planning to play in the competitive matches. 
       The headsets need to have a 3.5mm audio cable and you should bring your own cable. 
