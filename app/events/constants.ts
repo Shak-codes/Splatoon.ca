@@ -121,21 +121,17 @@ export const CHECKLIST = [
   },
   {
     id: "2",
-    name: "Nintendo Switch Console with Splatoon 3",
-    description: "You'll definitely need this if you want to play.",
+    name: "Console with Splatoon 3",
     mandatory: true,
   },
   {
     id: "3",
-    name: "Nintendo Switch Dock & Power Adapter",
-    description: "We rarely have extra! Don't forget this!",
+    name: "Dock & Power Adapter",
     mandatory: true,
   },
   {
     id: "4",
     name: "Controller",
-    description: `The last time someone forgot their controller they 
-      had to borrow one that was barely functional.`,
     mandatory: true,
   },
   {

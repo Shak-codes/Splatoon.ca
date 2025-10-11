@@ -58,7 +58,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
             />
             <div className="flex flex-col">
               <Typography
-                variant="paragraph"
+                variant="subsectionTitle"
                 size="text-base"
                 className="font-medium text-gray-900"
               >
