@@ -24,7 +24,7 @@ const flairOffsetMap: Record<
   9: 1,
 };
 
-const eventNumber = 20;
+const eventNumber = 28;
 const lastDigit = Number(String(eventNumber).slice(-1)) as
   | 0
   | 1
@@ -47,9 +47,6 @@ type EventHeaderProps = {
 };
 
 const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
-  const flairBaseRight = "var(--brflair-right)";
-  const flairOffsetPx = `0%`;
-  const flairRightValue = `calc(${flairBaseRight} + ${flairOffsetPx})`;
   return (
     <section className={`${styles.headerContainer} ${className}`}>
       <section className="relative w-full flex items-center justify-center">
