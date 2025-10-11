@@ -96,7 +96,7 @@ body::before {
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-  width: 200px;
+  width: 300px;
 }
 
 .mainSection {
@@ -116,12 +116,6 @@ body::before {
 
 .sectionContent > * + * {
   margin-top: calc(var(--spacing) * 4);
-}
-
-@media (min-width: 360px) {
-  .mainContainer {
-    width: 300px;
-  }
 }
 
 @media (min-width: 640px) {
