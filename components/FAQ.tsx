@@ -31,7 +31,10 @@ const FAQ = ({ faqData }: FAQProps) => {
   };
 
   return (
-    <main className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]">
+    <main
+      aria-labelledby="faq-heading"
+      className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]"
+    >
       <section className="text-center p-5 bg-black/50 rounded-lg">
         <Typography>
           Need clarification on anything? Below is a list of the most commonly
@@ -41,7 +44,7 @@ const FAQ = ({ faqData }: FAQProps) => {
 
       <section className="rounded-lg bg-black/60 space-y-4 p-5 transition-all duration-300 ease-in-out">
         {faqData.map((section, sidx) => (
-          <div
+          <section
             key={sidx}
             className="mx-auto space-y-2 w-full transition-all duration-300 ease-in-out"
           >
@@ -91,7 +94,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                 </div>
               );
             })}
-          </div>
+          </section>
         ))}
       </section>
 
