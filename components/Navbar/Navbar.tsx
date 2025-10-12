@@ -40,7 +40,10 @@ const Navbar = ({ config, socials }: NavbarProps) => {
         </button>
 
         {socials.length > 0 && (
-          <section className="flex items-center gap-4">
+          <section
+            className="flex items-center gap-4"
+            aria-label="Social media links"
+          >
             {socials.map((s) => (
               <Link
                 key={s.href}
