@@ -11,6 +11,7 @@ export const SECTIONS = [
     images: ["/squidsocial/pastecat.webp"],
     width: 1000,
     height: 1333,
+    alt: "Image of Pastecat, Squid Social founder.",
   },
   {
     title: "The First Squid Social",
@@ -20,6 +21,7 @@ export const SECTIONS = [
     images: ["/posters/1.webp"],
     width: 1000,
     height: 1545,
+    alt: "An image of the first Squid Social poster.",
   },
   {
     title: "Dedication",
@@ -31,6 +33,7 @@ export const SECTIONS = [
     images: ["/squidsocial/PUGB_Photo_2.webp"],
     width: 1000,
     height: 1545,
+    alt: "A group photo of the Squid Social attendees at Power Up Game Bar.",
   },
   {
     title: "A Bigger Stage",
@@ -44,16 +47,18 @@ export const SECTIONS = [
     images: ["/squidsocial/fanexpo.webp"],
     width: 1200,
     height: 808,
+    alt: "An image of Splatoon at Fanexpo.",
   },
   {
     title: "Passing the Torch",
     subtitle: "Greatness comes in many forms.",
     text: `After years of growth under Pastecat's leadership, the Squid Social events had become a staple in the GTA. 
-  However Pastecat knew it was time for Squid Social to enter a new chapter. Starting with Squid Social 20, Pastecat passed 
-  the torch to IceFlinger. Since then, Ice had continued pushing Pastecat's vision of building a welcoming community for 
+  However Pastecat knew it was time for Squid Social to enter a new chapter. Starting with Squid Social 17, Pastecat passed 
+  the torch to IceFlinger, and Pastecat attended his final event at Squid Social 20. Since then, Ice had continued pushing Pastecat's vision of building a welcoming community for 
   Splatoon players around the GTA.`,
     images: ["/squidsocial/Invictus_Photo_16.webp"],
     width: 1333,
     height: 1000,
+    alt: "An image of the Squid Social 20, the last event Pastecat attended.",
   },
 ];

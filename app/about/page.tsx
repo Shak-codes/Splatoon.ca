@@ -31,7 +31,7 @@ const About = () => {
       <Navbar config={navLinks} socials={navSocials} />
       <main className="mainContainer">
         <div className="min-h-screen flex flex-col justify-start items-center pt-20 gap-10">
-          <header id="header">
+          <header id="header" aria-labelledby="about-heading">
             <Header title="About Us" variant="header" size="text-6xl" />
             <Subtitle
               subtitle="Get to know our history"
@@ -64,7 +64,8 @@ const About = () => {
               size="text-xl"
               className="text-center"
             >
-              Businesses place their trust in the Squid Social organizers.
+              Professional organizations place their trust in the Squid Social
+              team.
             </Typography>
             <div className="flex justify-center items-center gap-5">
               <Image
@@ -110,12 +111,11 @@ const About = () => {
                 className="w-[10%] h-auto"
               />
             </div>
-            <Button text="Get Started" disabled={false} href="#section0" />
+            <Button text="Get Started" href="#section0" />
           </section>
         </div>
-        1
         {SECTIONS.map(
-          ({ title, subtitle, text, images, width, height }, idx) => {
+          ({ title, subtitle, text, images, width, height, alt }, idx) => {
             const isEven = idx % 2 === 0;
             const backHref = idx === 0 ? "#title" : `#section${idx - 1}`;
             const nextHref = idx === 4 ? "#title" : `#section${idx + 1}`;
@@ -132,7 +132,7 @@ const About = () => {
                       src={images[0]}
                       width={width}
                       height={height}
-                      alt={`${idx}`}
+                      alt={alt}
                       className="max-h-[400px] max-w-[50%]"
                     />
                   )}
@@ -149,12 +149,11 @@ const About = () => {
                     </Typography>
                     <Typography size="text-sm">{text}</Typography>
                     <div className="flex gap-2">
-                      <Button text="Back" href={backHref} disabled={false} />
+                      <Button text="Back" href={backHref} />
                       <Button
                         text={nextText}
                         href={nextHref}
                         bghover="accent"
-                        disabled={false}
                       />
                     </div>
                   </div>
