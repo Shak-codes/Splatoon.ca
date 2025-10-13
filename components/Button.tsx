@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type ButtonProps = {
   text: string;
-  disabled: boolean;
+  disabled?: boolean;
   href?: string;
   bghover?: "bg" | "accent";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -11,7 +11,7 @@ type ButtonProps = {
 
 const Button = ({
   text,
-  disabled,
+  disabled = false,
   href,
   bghover = "bg",
   onClick,
