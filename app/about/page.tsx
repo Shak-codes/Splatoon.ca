@@ -126,47 +126,47 @@ const About = () => {
                 id={`section${idx}`}
                 className="min-h-screen flex items-center"
               >
-                <section className="flex items-center bg-black/40 p-5 rounded-xl space-x-10">
-                  {isEven && (
-                    <Image
-                      src={images[0]}
-                      width={width}
-                      height={height}
-                      alt={alt}
-                      className="max-h-[400px] max-w-[50%]"
-                    />
-                  )}
-                  <div className="space-y-2">
-                    <Typography
-                      variant="sectionTitle"
-                      size="text-sm"
-                      className="!text-[var(--primary)]"
-                    >
-                      {title}
-                    </Typography>
-                    <Typography variant="sectionSubtitle" size="text-lg">
-                      {subtitle}
-                    </Typography>
-                    <Typography size="text-sm">{text}</Typography>
-                    <div className="flex gap-2">
-                      <Button text="Back" href={backHref} />
-                      <Button
-                        text={nextText}
-                        href={nextHref}
-                        bghover="accent"
+                <section className="w-full bg-black/40 rounded-xl p-4 sm:p-5">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-10">
+                    {isEven && (
+                      <Image
+                        src={images[0]}
+                        width={width}
+                        height={height}
+                        alt={alt}
+                        className="w-full md:max-w-[50%] h-auto rounded-md"
                       />
+                    )}
+
+                    <div className="w-full sm:w-auto space-y-2 sm:space-y-3">
+                      <Typography
+                        variant="sectionTitle"
+                        size="text-sm"
+                        className="!text-[var(--primary)]"
+                      >
+                        {title}
+                      </Typography>
+                      <Typography variant="sectionSubtitle" size="text-lg">
+                        {subtitle}
+                      </Typography>
+                      <Typography size="text-sm">{text}</Typography>
                     </div>
+
+                    {!isEven && (
+                      <Image
+                        src={images[0]}
+                        width={width}
+                        height={height}
+                        alt={`${idx}`}
+                        className="w-full md:max-w-[50%] h-auto rounded-md"
+                      />
+                    )}
                   </div>
 
-                  {!isEven && (
-                    <Image
-                      src={images[0]}
-                      width={width}
-                      height={height}
-                      alt={`${idx}`}
-                      className="max-h-[400px] max-w-[50%]"
-                    />
-                  )}
+                  <div className="flex gap-2 pt-2">
+                    <Button text="Back" href={backHref} />
+                    <Button text={nextText} href={nextHref} bghover="accent" />
+                  </div>
                 </section>
               </div>
             );

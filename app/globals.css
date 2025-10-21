@@ -96,7 +96,10 @@ body::before {
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  padding-inline: 1rem;
+  box-sizing: border-box;
 }
 
 .mainSection {
@@ -120,30 +123,30 @@ body::before {
 
 @media (min-width: 640px) {
   .mainContainer {
-    width: 500px;
+    max-width: 500px;
   }
 }
 
 @media (min-width: 768px) {
   .mainContainer {
-    width: 600px;
+    max-width: 600px;
   }
 }
 
 @media (min-width: 1024px) {
   .mainContainer {
-    width: 800px;
+    max-width: 800px;
   }
 }
 
 @media (min-width: 1280px) {
   .mainContainer {
-    width: 900px;
+    max-width: 900px;
   }
 }
 
 @media (min-width: 1536px) {
   .mainContainer {
-    width: 1000px;
+    max-width: 1000px;
   }
 }
