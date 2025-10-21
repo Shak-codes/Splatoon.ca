@@ -69,7 +69,7 @@ const About = () => {
             </Typography>
             <div className="flex justify-center items-center gap-5">
               <Image
-                src={"/partners/a&c.webp"}
+                src={"/partners/A&C.webp"}
                 height={1000}
                 width={1505}
                 alt="A&C Games"

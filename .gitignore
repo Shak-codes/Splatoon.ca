@@ -44,3 +44,4 @@ next-env.d.ts
 !public/backgrounds/*
 !public/socials/*
 !public/icons/*
+!public/flourish/*
