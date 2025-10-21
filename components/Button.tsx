@@ -19,11 +19,12 @@ const Button = ({
   const className = `
     flex justify-center items-center
     bg-transparent border border-white text-white font-bold
-    h-12 w-full rounded cursor-pointer
+    w-full rounded cursor-pointer
     transition-colors duration-300
     ${bghover === "accent" && "hover:bg-[var(--accent)]"}
     ${bghover === "bg" && "hover:bg-[var(--primary)]"} 
     hover:border-transparent 
+    p-3 text-center
   `;
   if (href) {
     return (
