@@ -103,12 +103,15 @@ const Navbar = ({ config, socials }: NavbarProps) => {
           {config.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <li key={link.href}>
+              <li
+                key={link.href}
+                className="rounded-lg p-2  transition-all duration-200 hover:bg-black/15"
+              >
                 <Link
                   href={link.href}
                   className={`
-                  block text-lg text-black
-                  hover:font-bold transition-all duration-200
+                  block text-lg text-white
+                  hover:font-bold hover:scale-105 hover:pl-2 transition-all duration-200
                   ${isActive ? "!font-bold" : ""}
                 `}
                   onClick={() => setOpen(false)}
