@@ -57,6 +57,7 @@ const FAQ = ({ faqData }: FAQProps) => {
               return (
                 <div
                   role="button"
+                  key={fidx}
                   tabIndex={0}
                   aria-expanded={isOpen}
                   onClick={() => toggle(sidx, fidx)}

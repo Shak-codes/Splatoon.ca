@@ -53,12 +53,14 @@ const FAQPage = () => {
   return (
     <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-screen gap-5 justify-items-center">
       <Navbar config={navLinks} socials={navSocials} />
-      <Header
-        variant="header"
-        size="text-6xl"
-        title="Frequently Asked\NQuestions"
-        className="text-center"
-      />
+      <header aria-labelledby="faq-heading">
+        <Header
+          variant="header"
+          size="text-6xl"
+          title="Frequently Asked\NQuestions"
+          className="text-center"
+        />
+      </header>
       <FAQ faqData={testFAQ} />
       <Footer />
     </div>
