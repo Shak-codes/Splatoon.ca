@@ -46,15 +46,15 @@ export default function Home() {
             "
           >
             <Image
-              src="/logo2.png"
-              alt="Splatoon Ontario Logo"
-              width={800}
-              height={400}
+              src="/SplatoonToronto.webp"
+              alt="Splatoon Toronto Logo"
+              width={2048}
+              height={1816}
               className="h-auto"
             />
             <Subtitle
               subtitle="Grassroots Splatoon in Toronto"
-              className="absolute top-[78%] w-full"
+              className="w-full mt-[-15%]"
             />
           </section>
         </main>
