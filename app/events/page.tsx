@@ -11,25 +11,6 @@ import Checklist from "@/components/Checklist";
 import { CHECKLIST } from "./constants";
 
 const Events = () => {
-  const items = [
-    {
-      id: "1",
-      name: "Sign in to your account",
-      description: "Make sure you’re logged into your profile.",
-      mandatory: true,
-    },
-    {
-      id: "2",
-      name: "Verify your email",
-      description: "Click the verification link sent to your inbox.",
-      mandatory: true,
-    },
-    {
-      id: "3",
-      name: "Customize your preferences",
-      description: "Optional but recommended for a better experience.",
-    },
-  ];
   return (
     <div className="flex flex-col items-center gap-1 min-h-screen pb-1">
       <Navbar config={navLinks} socials={navSocials} />
@@ -42,20 +23,36 @@ const Events = () => {
         />
         <section id="details" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="DETAILS" />
+            <Header variant="sectionTitle" size="text-5xl" title="Details" />
             <Typography>
               We pride ourselves on bringing together people from all facets of
               the community. Whether you&apos;re a competitive player, casual,
               or even just getting into the series you&apos;ll have a great
-              time! Hosted at Invictus Gaming Lounge, we run competitive and
-              casual matches for all to enjoy!
+              time! Hosted at Invictus Game Station in Toronto, we run
+              competitive and casual matches for all to enjoy!
             </Typography>
-            <Button text="What to bring" disabled={false} href="#checklist" />
+            <Typography>
+              If you're participating in the competitive matches, you'll be
+              randomly assigned to a team for the event, where you'll
+              participate in a round-robin bracket with your team. There's
+              absolutely no skill requirement to play in these matches, our
+              skill range scales brand new players to seasoned veterans.
+              Furthermore, since we only have two stations for competitive play,
+              during downtime you'll be able to participate in the casual
+              matches!
+            </Typography>
+            <Typography>
+              If you aren't playing in the competitive matches, you can do
+              practically whatever you'd like. Most people join a casual lobby,
+              some play open together, sometimes people even play different
+              games like Mario Kart.
+            </Typography>
           </div>
+          <Button text="Cross off our checklist!" href="#checklist" />
         </section>
         <section id="checklist" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="CHECKLIST" />
+            <Header variant="sectionTitle" size="text-5xl" title="Checklist" />
             <Typography>
               As an attendee there&apos;s a few things you have to bring in
               order to play. Make sure to pack early and double check in the
@@ -63,17 +60,18 @@ const Events = () => {
             </Typography>
             <Checklist items={CHECKLIST} />
           </div>
+          <Button href="#posters" text="Check out our posters!" />
         </section>
         <section id="posters" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="POSTERS" />
+            <Header variant="sectionTitle" size="text-5xl" title="Posters" />
             <Typography>
-              At the larger Squid Social events we have posters for sale. These
-              are made by talented artists in our local community and you can
-              buy the latest one for ten dollars! Sometimes we have leftovers
-              from older events and if you&apos;d like to pick any of those up
-              it&apos;ll cost you five bucks. Here are some examples of our
-              previous posters for your viewing!
+              At most of our events we have posters for sale. These are made by
+              talented artists in our local community and you can buy the latest
+              one for ten dollars! Sometimes we have leftovers from older events
+              and if you&apos;d like to pick any of those up it&apos;ll cost you
+              five bucks. Here are some examples of our previous posters for
+              your viewing!
             </Typography>
             <ImageCarousel images={POSTERS} />
           </div>
