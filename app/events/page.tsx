@@ -32,20 +32,20 @@ const Events = () => {
               competitive and casual matches for all to enjoy!
             </Typography>
             <Typography>
-              If you're participating in the competitive matches, you'll be
-              randomly assigned to a team for the event, where you'll
-              participate in a round-robin bracket with your team. There's
-              absolutely no skill requirement to play in these matches, our
-              skill range scales brand new players to seasoned veterans.
-              Furthermore, since we only have two stations for competitive play,
-              during downtime you'll be able to participate in the casual
-              matches!
+              If you&apos;re participating in the competitive matches,
+              you&apos;ll be randomly assigned to a team for the event, where
+              you&apos;ll participate in a round-robin bracket with your team.
+              There&apos;s absolutely no skill requirement to play in these
+              matches, our skill range scales brand new players to seasoned
+              veterans. Furthermore, since we only have two stations for
+              competitive play, during downtime you&apos;ll be able to
+              participate in the casual matches!
             </Typography>
             <Typography>
-              If you aren't playing in the competitive matches, you can do
-              practically whatever you'd like. Most people join a casual lobby,
-              some play open together, sometimes people even play different
-              games like Mario Kart.
+              If you aren&apos;t playing in the competitive matches, you can do
+              practically whatever you&apos;d like. Most people join a casual
+              lobby, some play open together, sometimes people even play
+              different games like Mario Kart.
             </Typography>
           </div>
           <Button text="Cross off our checklist!" href="#checklist" />

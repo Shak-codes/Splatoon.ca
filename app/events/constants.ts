@@ -116,7 +116,7 @@ export const CHECKLIST = [
     id: "1",
     name: "Venue Fee",
     description:
-      "The venue fee is 25 dollars + tax. We recommend paying by card since it's easiest.",
+      "The venue fee is 25 dollars + tax. We recommend paying by card since it&apos;s easiest.",
     mandatory: true,
   },
   {
@@ -137,21 +137,21 @@ export const CHECKLIST = [
   {
     id: "5",
     name: "HDMI Cable",
-    description: `We don't really have extras of these so you gotta bring your own.`,
+    description: `We don&apos;t really have extras of these so you gotta bring your own.`,
     mandatory: true,
   },
   {
     id: "6",
     name: "Water Bottle",
     description:
-      "Invictus doesn't allow outside food/drink aside from water. It's always good to have some on you.",
+      "Invictus doesn&apos;t allow outside food/drink aside from water. It&apos;s always good to have some on you.",
     mandatory: false,
   },
   {
     id: "7",
     name: "LAN Adapter",
     description:
-      "Only needed if you have a Switch Dock that doesn't have a built in LAN port.",
+      "Only needed if you have a Switch Dock that doesn&apos;t have a built in LAN port.",
     mandatory: false,
   },
   {
