@@ -50,6 +50,10 @@ export default function Home() {
               alt="Splatoon Toronto Logo"
               width={2048}
               height={1816}
+              sizes="(max-width: 360px) 300px,
+                    (max-width: 640px) 400px,
+                    (max-width: 1024px) 500px,
+                    550px"
               className="h-auto"
             />
             <Subtitle

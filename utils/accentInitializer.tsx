@@ -62,7 +62,7 @@ const setAccent = () => {
   let a = sessionStorage.getItem("accent");
 
   if (!p || !b || !a) {
-    const idx = 0;
+    const idx = Math.floor(Math.random() * length);
     console.log("bg:", primary[idx]);
     p = primary[idx];
     b = background[idx];

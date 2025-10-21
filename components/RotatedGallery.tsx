@@ -11,13 +11,14 @@ interface RotatedGalleryProps {
 }
 
 const RotatedGallery = ({ images }: RotatedGalleryProps) => {
-  const width = (100 - images.length) / images.length;
+  console.log("Passed in", images.length, "images!");
+  const width = (100 - images.length / 2) / images.length;
 
   return (
     <div className="relative w-full overflow-hidden rounded-xl">
       <div
         className="
-          flex gap-[2px]
+          flex gap-[0.5%]
           transform rotate-[-3deg] scale-[1.2]
         "
       >
@@ -29,7 +30,7 @@ const RotatedGallery = ({ images }: RotatedGalleryProps) => {
             width={image.width}
             height={image.height}
             className="object-cover shadow-xl brightness-40 max-h-[1100px]"
-            style={{ width: `${width}vw`, height: "30vh" }}
+            style={{ width: `${width}%`, height: "30vh" }}
             sizes="
               (min-width: 1920px) 550px,
               (min-width: 1536px) 500px,
