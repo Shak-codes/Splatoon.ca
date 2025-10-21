@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 **.svg
+!public/socials/bluesky.svg
+!public/socials/twitter.svg
+!public/socials/discord.svg
+!public/flourish/Flourish16.svg
+!public/flourish/Flourish9.svg
