@@ -121,31 +121,37 @@ body::before {
 
 @media (min-width: 360px) {
   .mainContainer {
-    max-width: 340px;
+    max-width: 330px;
+  }
+}
+
+@media (min-width: 480px) {
+  .mainContainer {
+    max-width: 440px;
   }
 }
 
 @media (min-width: 640px) {
   .mainContainer {
-    max-width: 500px;
+    max-width: 600px;
   }
 }
 
 @media (min-width: 768px) {
   .mainContainer {
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
 @media (min-width: 1024px) {
   .mainContainer {
-    max-width: 800px;
+    max-width: 900px;
   }
 }
 
 @media (min-width: 1280px) {
   .mainContainer {
-    max-width: 900px;
+    max-width: 950px;
   }
 }
 
