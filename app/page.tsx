@@ -41,7 +41,7 @@ export default function Home() {
             className="
               absolute
               flex flex-col justify-center items-center
-              min-w-[400px] max-w-[550px]
+              min-w-[300px] max-w-[500px]
               top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2
               gap-1
             "
@@ -58,7 +58,7 @@ export default function Home() {
               className="h-auto"
             />
             <Subtitle
-              subtitle="Grassroots Splatoon in Toronto"
+              subtitle="Grassroots Splatoon Events"
               className="w-full"
             />
           </section>
