@@ -105,7 +105,7 @@ const Navbar = ({ config, socials }: NavbarProps) => {
             return (
               <li
                 key={link.href}
-                className="rounded-lg p-2  transition-all duration-200 hover:bg-black/15"
+                className="rounded-sm p-2  transition-all duration-200 hover:bg-black/15"
               >
                 <Link
                   href={link.href}

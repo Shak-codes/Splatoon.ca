@@ -11,7 +11,7 @@ const Subtitle = ({ subtitle, delay = 0, className }: SubtitleProps) => {
     <Typography
       variant="subtitle"
       size="text-lg"
-      className={`rounded-lg bg-white p-2 !text-[var(--background)] text-center ${className}`}
+      className={`rounded-sm bg-white p-2 !text-[var(--background)] text-center ${className}`}
     >
       <span key={subtitle}>
         {subtitle.split("").map((c, i) => (

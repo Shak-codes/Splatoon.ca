@@ -35,14 +35,14 @@ const FAQ = ({ faqData }: FAQProps) => {
       aria-labelledby="faq-heading"
       className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]"
     >
-      <section className="text-center p-5 bg-black/50 rounded-lg">
+      <section className="text-center p-5 bg-black/50 rounded-sm">
         <Typography>
           Need clarification on anything? Below is a list of the most commonly
           asked questions that we receive.
         </Typography>
       </section>
 
-      <section className="rounded-lg bg-black/60 space-y-4 p-5 transition-all duration-300 ease-in-out">
+      <section className="rounded-sm bg-black/60 space-y-4 p-5 transition-all duration-300 ease-in-out">
         {faqData.map((section, sidx) => (
           <section
             key={sidx}
@@ -64,7 +64,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                   onKeyDown={(e) =>
                     (e.key === "Enter" || e.key === " ") && toggle(sidx, fidx)
                   }
-                  className="border-gray-200 rounded-lg border px-4 py-6 hover:border-[var(--primary)] hover:bg-[var(--background)]/20 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-all duration-300 ease-in-out"
+                  className="border-gray-200 rounded-sm border px-4 py-6 hover:border-[var(--primary)] hover:bg-[var(--background)]/20 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-all duration-300 ease-in-out"
                 >
                   <Typography
                     variant="sectionSubtitle"
@@ -99,7 +99,7 @@ const FAQ = ({ faqData }: FAQProps) => {
         ))}
       </section>
 
-      <section className="flex flex-col gap-2 text-center bg-black/50 rounded-lg p-5">
+      <section className="flex flex-col gap-2 text-center bg-black/50 rounded-sm p-5">
         <Typography variant="sectionTitle" size="text-lg">
           Can&apos;t find your question?
         </Typography>

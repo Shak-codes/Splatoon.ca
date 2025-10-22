@@ -38,7 +38,7 @@ const About = () => {
               className="text-center"
             />
           </header>
-          <section className="relative flex justify-center items-center bg-black/40 p-2 rounded-xl">
+          <section className="relative flex justify-center items-center bg-black/40 p-2 rounded-sm">
             <RotatedGallery images={images} />
             <div className="absolute flex justify-center items-center gap-2 p-5">
               <Typography
@@ -126,7 +126,7 @@ const About = () => {
                 id={`section${idx}`}
                 className="min-h-screen flex items-center"
               >
-                <section className="w-full bg-black/40 rounded-xl p-4 sm:p-5">
+                <section className="w-full bg-black/40 rounded-sm p-4 sm:p-5">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-10">
                     {isEven && (
                       <Image
@@ -134,7 +134,7 @@ const About = () => {
                         width={width}
                         height={height}
                         alt={alt}
-                        className="w-full md:max-w-[50%] h-auto rounded-md"
+                        className="w-full md:max-w-[50%] h-auto rounded-sm"
                       />
                     )}
 
@@ -158,7 +158,7 @@ const About = () => {
                         width={width}
                         height={height}
                         alt={`${idx}`}
-                        className="w-full md:max-w-[50%] h-auto rounded-md"
+                        className="w-full md:max-w-[50%] h-auto rounded-sm"
                       />
                     )}
                   </div>

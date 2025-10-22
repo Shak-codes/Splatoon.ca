@@ -44,7 +44,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
           <li
             key={id}
             onClick={() => handleToggle(id)}
-            className="flex items-center gap-3 border border-gray-200 p-3 rounded-lg cursor-pointer hover:border-[var(--primary)] hover:bg-[var(--background)]/40 transition select-none"
+            className="flex items-center gap-3 border border-gray-200 p-3 rounded-sm cursor-pointer hover:border-[var(--primary)] hover:bg-[var(--background)]/40 transition select-none"
           >
             <input
               id={id}
@@ -74,7 +74,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
       </ul>
 
       {allMandatoryChecked && (
-        <div className="text-center bg-green-500 p-2 rounded-lg">
+        <div className="text-center bg-green-500 p-2 rounded-sm">
           <Typography
             variant="subsectionSubtitle"
             size="text-base"

@@ -15,7 +15,7 @@ const RotatedGallery = ({ images }: RotatedGalleryProps) => {
   const width = (100 - images.length / 2) / images.length;
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl">
+    <div className="relative w-full overflow-hidden rounded-sm">
       <div
         className="
           flex gap-[0.5%]
