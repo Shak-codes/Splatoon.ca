@@ -5,7 +5,7 @@ import Button from "../Button";
 import Calendar from "@/public/icons/calendar.svg";
 import Location from "@/public/icons/location.svg";
 import Typography from "../Typography/Typography";
-import PageHeader from "../Header";
+import Header from "../Header";
 import styles from "./styles.module.css";
 
 const flairOffsetMap: Record<
@@ -50,15 +50,15 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
   return (
     <section className={`${styles.headerContainer} ${className}`}>
       <section className="relative w-full flex items-center justify-center">
-        <PageHeader
+        <Header
           variant="header"
-          size="text-6xl"
+          size="event-text"
           title="SQUID\NSOCIAL"
           className="text-end"
         />
-        <PageHeader
+        <Header
           variant="header"
-          size="text-9xl"
+          size="event-number"
           title={eventNumber.toString()}
           className="mt-[calc(var(--text-sm)/2)] !leading-[0]"
         />

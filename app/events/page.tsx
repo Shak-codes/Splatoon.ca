@@ -19,7 +19,7 @@ const Events = () => {
           date="Sunday October 26th"
           location="558 Yonge Street"
           href="#details"
-          className="min-h-[calc(100vh-60px)]"
+          className="min-h-screen"
         />
         <section id="details" className="mainSection">
           <div className="sectionContent">
