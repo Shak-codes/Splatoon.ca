@@ -68,13 +68,13 @@ const FAQ = ({ faqData }: FAQProps) => {
                     size="text-base"
                     className="w-full text-left flex justify-between"
                   >
-                    <span className="block leading-tight flex-8">
+                    <span className="block leading-tight flex-29">
                       {faq.question}
                     </span>
                     <span
                       aria-hidden
-                      className={`shrink-0 text-xl leading-none inline-flex justify-end flex-1
-                                  transition-transform duration-300 ease-in-out
+                      className={`text-xl leading-none flex justify-center flex-1
+                                  transition-transform duration-300 ease-in-out origin-center
                                   ${isOpen ? "rotate-45" : "rotate-0"}`}
                     >
                       +
