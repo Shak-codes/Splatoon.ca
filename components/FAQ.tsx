@@ -69,13 +69,16 @@ const FAQ = ({ faqData }: FAQProps) => {
                   <Typography
                     variant="sectionSubtitle"
                     size="text-base"
-                    className="w-full text-left flex justify-between items-center"
+                    className="w-full text-left flex justify-between"
                   >
-                    {faq.question}
+                    <span className="block leading-tight flex-8">
+                      {faq.question}
+                    </span>
                     <span
-                      className={`leading-[0] transform transition-transform duration-300 ease-in-out text-xl ${
-                        isOpen ? "rotate-45" : "rotate-0"
-                      }`}
+                      aria-hidden
+                      className={`shrink-0 text-xl leading-none inline-flex justify-end flex-1
+                                  transition-transform duration-300 ease-in-out
+                                  ${isOpen ? "rotate-45" : "rotate-0"}`}
                     >
                       +
                     </span>
