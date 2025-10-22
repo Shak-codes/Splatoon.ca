@@ -55,8 +55,7 @@ const Events = () => {
             <Header variant="sectionTitle" size="text-5xl" title="Checklist" />
             <Typography>
               As an attendee there&apos;s a few things you have to bring in
-              order to play. Make sure to pack early and double check in the
-              morning that you got everything on the list.
+              order to play. Make sure you packed everything on the list!
             </Typography>
             <Checklist items={CHECKLIST} />
           </div>

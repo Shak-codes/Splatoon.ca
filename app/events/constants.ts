@@ -116,17 +116,17 @@ export const CHECKLIST = [
     id: "1",
     name: "Venue Fee",
     description:
-      "The venue fee is 25 dollars + tax. We recommend paying by card since it&apos;s easiest.",
+      "The venue fee is 25 dollars + tax. Cash and card are accepted.",
     mandatory: true,
   },
   {
     id: "2",
-    name: "Console with Splatoon 3",
+    name: "Console & Splatoon 3",
     mandatory: true,
   },
   {
     id: "3",
-    name: "Dock & Power Adapter",
+    name: "Dock & Power Brick",
     mandatory: true,
   },
   {
@@ -137,29 +137,26 @@ export const CHECKLIST = [
   {
     id: "5",
     name: "HDMI Cable",
-    description: `We don&apos;t really have extras of these so you gotta bring your own.`,
+    description: `We rarely have extras.`,
     mandatory: true,
   },
   {
     id: "6",
     name: "Water Bottle",
-    description:
-      "Invictus doesn&apos;t allow outside food/drink aside from water. It&apos;s always good to have some on you.",
+    description: "Invictus doesn't allow outside food/drink aside from water.",
     mandatory: false,
   },
   {
     id: "7",
     name: "LAN Adapter",
     description:
-      "Only needed if you have a Switch Dock that doesn&apos;t have a built in LAN port.",
+      "Only needed if you have a Switch Dock that doesn't have a built in LAN port.",
     mandatory: false,
   },
   {
     id: "8",
     name: "Headset with Microphone and 3.5mm cable",
-    description: `Only needed if planning to play in the competitive matches. 
-      The headsets need to have a 3.5mm audio cable and you should bring your own cable. 
-      Extras are available but always good to bring your own.`,
+    description: `Only needed if planning to play in the competitive matches.`,
     mandatory: false,
   },
 ];
