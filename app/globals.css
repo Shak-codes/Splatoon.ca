@@ -97,7 +97,6 @@ body::before {
   align-items: center;
   width: 100%;
   max-width: 300px;
-  padding-inline: 1rem;
   box-sizing: border-box;
 }
 
@@ -118,6 +117,12 @@ body::before {
 
 .sectionContent > * + * {
   margin-top: calc(var(--spacing) * 4);
+}
+
+@media (min-width: 360px) {
+  .mainContainer {
+    max-width: 340px;
+  }
 }
 
 @media (min-width: 640px) {
