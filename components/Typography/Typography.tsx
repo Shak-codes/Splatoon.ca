@@ -13,10 +13,8 @@ type TypographyProps = {
     | "subsectionSubtitle"
     | "paragraph";
   size?:
-    | "text-9xl"
-    | "text-8xl"
-    | "text-7xl"
-    | "text-6xl"
+    | "event-number"
+    | "event-text"
     | "text-5xl"
     | "text-4xl"
     | "text-3xl"
@@ -50,9 +48,16 @@ const Typography = ({
       ? "h6"
       : "p";
 
+  const sizeClass =
+    size === "event-text"
+      ? styles.eventText
+      : size === "event-number"
+      ? styles.eventNumber
+      : size;
+
   return (
     <Tag
-      className={`${styles.size} ${styles.typography} ${styles[variant]} ${size} ${className}`}
+      className={`${styles.size} ${styles.typography} ${styles[variant]} ${sizeClass} ${className}`}
     >
       {children}
     </Tag>
