@@ -41,7 +41,7 @@ export default function Home() {
             className="
               absolute
               flex flex-col justify-center items-center
-              min-w-[300px] max-w-[500px]
+              min-w-[300px] max-w-[800px]
               top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2
               gap-1
             "
@@ -54,7 +54,9 @@ export default function Home() {
               sizes="(max-width: 360px) 300px,
                     (max-width: 640px) 400px,
                     (max-width: 1024px) 500px,
-                    550px"
+                    (max-width: 1280px) 600px,
+                    (max-width: 1536px) 700px,
+                    800px"
               className="h-auto"
             />
             <Subtitle
