@@ -13,16 +13,17 @@ type TypographyProps = {
     | "subsectionSubtitle"
     | "paragraph";
   size?:
+    | "page-header"
     | "event-number"
     | "event-text"
-    | "text-5xl"
-    | "text-4xl"
-    | "text-3xl"
-    | "text-2xl"
-    | "text-xl"
-    | "text-lg"
-    | "text-base"
-    | "text-sm";
+    | "5xl"
+    | "4xl"
+    | "3xl"
+    | "2xl"
+    | "xl"
+    | "lg"
+    | "base"
+    | "sm";
   children: ReactNode;
   className?: string;
 };
@@ -30,7 +31,7 @@ type TypographyProps = {
 const Typography = ({
   variant = "paragraph",
   children,
-  size = "text-base",
+  size = "base",
   className = "",
 }: TypographyProps) => {
   const Tag =
@@ -49,11 +50,13 @@ const Typography = ({
       : "p";
 
   const sizeClass =
-    size === "event-text"
+    size === "page-header"
+      ? styles.pageHeader
+      : size === "event-text"
       ? styles.eventText
       : size === "event-number"
       ? styles.eventNumber
-      : size;
+      : `text-${size}`;
 
   return (
     <Tag

@@ -32,7 +32,12 @@ const About = () => {
       <main className="mainContainer">
         <div className="min-h-screen flex flex-col justify-start items-center pt-20 gap-10">
           <header id="header" aria-labelledby="about-heading">
-            <Header title="About Us" variant="header" size="text-6xl" />
+            <Header
+              title="About Us"
+              variant="header"
+              size="page-header"
+              className="text-center"
+            />
             <Subtitle
               subtitle="Get to know our history"
               className="text-center"
@@ -41,11 +46,7 @@ const About = () => {
           <section className="relative flex justify-center items-center bg-black/40 p-2 rounded-sm">
             <RotatedGallery images={images} />
             <div className="absolute flex justify-center items-center gap-2 p-5">
-              <Typography
-                variant="sectionTitle"
-                size="text-3xl"
-                className="flex-2"
-              >
+              <Typography variant="sectionTitle" size="3xl" className="flex-2">
                 The Squid Social team breathes passion.
               </Typography>
               <Typography className="flex-3">
@@ -61,7 +62,7 @@ const About = () => {
           <section className="space-y-6">
             <Typography
               variant="sectionTitle"
-              size="text-xl"
+              size="xl"
               className="text-center"
             >
               Professional organizations place their trust in the Squid Social
@@ -141,15 +142,15 @@ const About = () => {
                     <div className="w-full sm:w-auto space-y-2 sm:space-y-3">
                       <Typography
                         variant="sectionTitle"
-                        size="text-sm"
+                        size="sm"
                         className="!text-[var(--primary)]"
                       >
                         {title}
                       </Typography>
-                      <Typography variant="sectionSubtitle" size="text-lg">
+                      <Typography variant="sectionSubtitle" size="lg">
                         {subtitle}
                       </Typography>
-                      <Typography size="text-sm">{text}</Typography>
+                      <Typography size="sm">{text}</Typography>
                     </div>
 
                     {!isEven && (

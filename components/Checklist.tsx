@@ -54,7 +54,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
               className="accent-green-600 cursor-pointer"
             />
             <div className="flex flex-col">
-              <Typography variant="subsectionTitle" size="text-base">
+              <Typography variant="subsectionTitle" size="base">
                 {name}{" "}
                 {mandatory && (
                   <span className="mt-[-1px] text-red-500 text-sm font-normal">
@@ -64,7 +64,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
               </Typography>
 
               {description && (
-                <Typography variant="paragraph" size="text-sm">
+                <Typography variant="paragraph" size="sm">
                   {description}
                 </Typography>
               )}
@@ -77,7 +77,7 @@ const Checklist: React.FC<ChecklistProps> = ({ items, onChange, title }) => {
         <div className="text-center bg-green-500 p-2 rounded-sm">
           <Typography
             variant="subsectionSubtitle"
-            size="text-base"
+            size="base"
             className="!text-[var(--background)]"
           >
             🎉 You’re all good to go!

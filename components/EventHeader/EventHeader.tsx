@@ -78,16 +78,16 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
       <section className="w-full justify-center flex gap-10 -mt-[var(--text-sm)]">
         <section className="flex justify-center items-center gap-2">
           <Image src={Calendar} alt="Calendar Icon" width={20} height={20} />
-          <Typography size="text-sm">{date}</Typography>
+          <Typography size="sm">{date}</Typography>
         </section>
         <section className="flex justify-center items-center gap-2">
           <Image src={Location} alt="Location Icon" width={20} height={20} />
-          <Typography size="text-sm">{location}</Typography>
+          <Typography size="sm">{location}</Typography>
         </section>
       </section>
 
       <section className="bg-black/50 rounded-sm p-5">
-        <Typography size="text-sm">
+        <Typography size="sm">
           About once every month we host our signature Squid Social event in the
           heart of the Toronto. Whether you&apos;re a long time player or new to
           the community, these events are the perfect way to connect with fellow

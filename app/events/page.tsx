@@ -23,7 +23,7 @@ const Events = () => {
         />
         <section id="details" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="Details" />
+            <Header variant="sectionTitle" size="5xl" title="Details" />
             <Typography>
               We pride ourselves on bringing together people from all facets of
               the community. Whether you&apos;re a competitive player, casual,
@@ -52,7 +52,7 @@ const Events = () => {
         </section>
         <section id="checklist" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="Checklist" />
+            <Header variant="sectionTitle" size="5xl" title="Checklist" />
             <Typography>
               As an attendee there&apos;s a few things you have to bring in
               order to play. Make sure you packed everything on the list!
@@ -63,7 +63,7 @@ const Events = () => {
         </section>
         <section id="posters" className="mainSection">
           <div className="sectionContent">
-            <Header variant="sectionTitle" size="text-5xl" title="Posters" />
+            <Header variant="sectionTitle" size="5xl" title="Posters" />
             <Typography>
               At most of our events we have posters for sale. These are made by
               talented artists in our local community and you can buy the latest

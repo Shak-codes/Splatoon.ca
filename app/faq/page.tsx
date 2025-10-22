@@ -56,7 +56,7 @@ const FAQPage = () => {
       <header aria-labelledby="faq-heading">
         <Header
           variant="header"
-          size="text-6xl"
+          size="page-header"
           title="FAQ"
           className="text-center"
         />

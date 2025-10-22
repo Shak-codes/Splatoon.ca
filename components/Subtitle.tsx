@@ -10,7 +10,7 @@ const Subtitle = ({ subtitle, delay = 0, className }: SubtitleProps) => {
   return (
     <Typography
       variant="subtitle"
-      size="text-lg"
+      size="lg"
       className={`rounded-sm bg-white p-2 !text-[var(--background)] text-center ${className}`}
     >
       <span key={subtitle}>

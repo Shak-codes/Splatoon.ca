@@ -45,7 +45,7 @@ const FAQ = ({ faqData }: FAQProps) => {
             key={sidx}
             className="mx-auto space-y-2 w-full transition-all duration-300 ease-in-out"
           >
-            <Typography variant="sectionTitle" size="text-lg">
+            <Typography variant="sectionTitle" size="lg">
               {section.section}
             </Typography>
 
@@ -65,7 +65,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                 >
                   <Typography
                     variant="sectionSubtitle"
-                    size="text-base"
+                    size="base"
                     className="w-full text-left flex justify-between"
                   >
                     <span className="block leading-tight flex-29">
@@ -88,7 +88,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <Typography variant="paragraph" size="text-sm">
+                    <Typography variant="paragraph" size="sm">
                       {faq.answer}
                     </Typography>
                   </div>
@@ -100,7 +100,7 @@ const FAQ = ({ faqData }: FAQProps) => {
       </section>
 
       <section className="flex flex-col gap-2 text-center bg-black/50 rounded-sm p-5">
-        <Typography variant="sectionTitle" size="text-lg">
+        <Typography variant="sectionTitle" size="lg">
           Can&apos;t find your question?
         </Typography>
         <Typography>
