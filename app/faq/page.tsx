@@ -57,7 +57,7 @@ const FAQPage = () => {
         <Header
           variant="header"
           size="text-6xl"
-          title="Frequently Asked\NQuestions"
+          title="FAQ"
           className="text-center"
         />
       </header>
