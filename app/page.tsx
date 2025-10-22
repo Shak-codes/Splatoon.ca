@@ -28,7 +28,7 @@ export default function Home() {
   const images = SQUIDSOCIAL_IMGS.slice(0, count);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-clip">
       <div
         className={
           "font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen"
