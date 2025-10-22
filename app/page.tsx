@@ -35,14 +35,15 @@ export default function Home() {
         }
       >
         <Navbar config={navLinks} socials={navSocials} />
-        <main className="flex flex-grow flex-col justify-center items-center gap-1">
+        <main className="flex-grow">
           <DiagonalGallery images={images} />
           <section
             className="
               absolute
               flex flex-col justify-center items-center
-              min-w-[300px] max-w-[550px]
-              top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2
+              min-w-[400px] max-w-[550px]
+              top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2
+              gap-1
             "
           >
             <Image
@@ -58,7 +59,7 @@ export default function Home() {
             />
             <Subtitle
               subtitle="Grassroots Splatoon in Toronto"
-              className="w-full mt-[-15%]"
+              className="w-full"
             />
           </section>
         </main>

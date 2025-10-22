@@ -18,7 +18,15 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
   const width = (100 - images.length) / images.length;
 
   return (
-    <div className="relative">
+    <div
+      className="
+        absolute
+        top-1/2 left-1/2
+        -translate-x-1/2 -translate-y-1/2
+        w-full
+        flex justify-center
+      "
+    >
       <div
         className="
           flex gap-[1vw]
