@@ -31,10 +31,7 @@ const FAQ = ({ faqData }: FAQProps) => {
   };
 
   return (
-    <main
-      aria-labelledby="faq-heading"
-      className="flex-grow space-y-5 w-[50%] min-w-[300px] max-w-[800px]"
-    >
+    <main aria-labelledby="faq-heading" className="mainContainer space-y-5">
       <section className="text-center p-5 bg-black/50 rounded-sm">
         <Typography>
           Need clarification on anything? Below is a list of the most commonly
