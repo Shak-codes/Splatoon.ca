@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     images: [
       {
-        url: "https://splatoon.ca/SplatoonToronto.webp",
+        url: "https://splatoon.ca/SplatoonToronto2.webp",
         width: 1200,
         height: 1200,
         alt: "Splatoon Toronto - events, merchandise, and community info!",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Splatoon Toronto",
     description:
       "Stay up to date with the grassroots Splatoon community around Toronto.",
-    images: ["https://splatoon.ca/SplatoonToronto.webp"],
+    images: ["https://splatoon.ca/SplatoonToronto2.webp"],
   },
   robots: {
     index: true,
