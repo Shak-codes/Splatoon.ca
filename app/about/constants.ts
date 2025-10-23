@@ -42,7 +42,7 @@ export const SECTIONS = [
     title: "A Bigger Stage",
     subtitle: "Hard work finally recognized.",
     text: `The release of Splatoon 2 on the Nintendo Switch revitalized the scene, pushing it to greater 
-  heights. Attendance grew, and Nintendo of Canada even took notice of Pastecat&apos;s efforts. At the 2017 Fan Expo 
+  heights. Attendance grew, and Nintendo of Canada even took notice of Pastecat's efforts. At the 2017 Fan Expo 
   event, Nintendo of Canada reached out for help at running a tournament featuring the players in the local 
   community that Pastecat fostered himself. This marked the turning point where Squid Social had been recognized 
   as a staple in the Canadian Splatoon scene. What started as a small local gathering had grown into a recognizable 
@@ -56,9 +56,9 @@ export const SECTIONS = [
   {
     title: "Passing the Torch",
     subtitle: "Greatness comes in many forms.",
-    text: `After years of growth under Pastecat&apos;s leadership, the Squid Social events had become a staple in the GTA. 
+    text: `After years of growth under Pastecat's leadership, the Squid Social events had become a staple in the GTA. 
   However Pastecat knew it was time for Squid Social to enter a new chapter. Starting with Squid Social 17, Pastecat passed 
-  the torch to IceFlinger, and Pastecat attended his final event at Squid Social 20. Since then, Ice had continued pushing Pastecat&apos;s vision of building a welcoming community for 
+  the torch to IceFlinger, and Pastecat attended his final event at Squid Social 20. Since then, Ice had continued pushing Pastecat's vision of building a welcoming community for 
   Splatoon players around the GTA.`,
     images: ["/squidsocial/Invictus_Photo_16.webp"],
     width: 1333,

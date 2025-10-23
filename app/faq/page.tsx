@@ -16,7 +16,7 @@ const testFAQ = [
       {
         question: "Do I have to show up at noon?",
         answer:
-          "Feel free to join us at any time. We usually stop playing matches around 5 to sign posters and take pictures though so don&apos;t be too late!",
+          "Feel free to join us at any time. We usually stop playing matches around 5 to sign posters and take pictures though so don't be too late!",
       },
     ],
   },
@@ -31,19 +31,19 @@ const testFAQ = [
       {
         question: "Is food allowed in the venue?",
         answer:
-          "Invictus doesn&apos;t allow any outside food or drinks inside the venue aside from a water bottle. That being said, Invictus does sell their own food and drinks within the venue.",
+          "Invictus doesn't allow any outside food or drinks inside the venue aside from a water bottle. That being said, Invictus does sell their own food and drinks within the venue.",
       },
       {
         question:
           "Can my parents attend? If so, do they have to pay the entry fee?",
         answer:
-          "Parents are free to attend and they do not have to pay the entry fee as long as they&apos;re not playing.",
+          "Parents are free to attend and they do not have to pay the entry fee as long as they're not playing.",
       },
 
       {
         question: "Should I bring my Switch 1 or Switch 2?",
         answer:
-          "Please bring one of your Switch 1 or Switch 2. It doesn&apos;t matter which console you bring, just that you bring one with a copy of Splatoon 3.",
+          "Please bring one of your Switch 1 or Switch 2. It doesn't matter which console you bring, just that you bring one with a copy of Splatoon 3.",
       },
     ],
   },
