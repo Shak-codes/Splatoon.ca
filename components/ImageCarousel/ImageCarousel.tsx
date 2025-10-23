@@ -25,6 +25,10 @@ const TAP_MAX_DURATION_MS = 220;
 const FAR_HIDE_CUTOFF = 3.2;
 const PRELOAD_WINDOW = 3;
 
+type Updater = number | ((n: number) => number);
+const isUpdater = (v: Updater): v is (n: number) => number =>
+  typeof v === "function";
+
 const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const count = images.length;
   const [activeIndex, _setActiveIndex] = useState(Math.floor(count / 2));
@@ -36,20 +40,21 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const dragProgressRef = useRef(dragProgress);
   const velocityRef = useRef(0);
 
-  const setActiveIndex = (v: number | ((n: number) => number)) => {
-    const next =
-      typeof v === "function" ? (v as any)(activeIndexRef.current) : v;
+  const setActiveIndex = (v: Updater) => {
+    const next = isUpdater(v) ? v(activeIndexRef.current) : v;
     activeIndexRef.current = next;
     _setActiveIndex(next);
   };
-  const setDragProgress = (v: number | ((n: number) => number)) => {
-    const next =
-      typeof v === "function" ? (v as any)(dragProgressRef.current) : v;
+  const setDragProgress = (v: Updater) => {
+    const next = isUpdater(v) ? v(dragProgressRef.current) : v;
     dragProgressRef.current = next;
     _setDragProgress(next);
   };
 
-  const clampIndex = (i: number) => ((i % count) + count) % count;
+  const clampIndex = useCallback(
+    (i: number) => ((i % count) + count) % count,
+    [count]
+  );
 
   const posterRef = useRef<HTMLDivElement | null>(null);
   const [posterWidth, setPosterWidth] = useState<number>(200);
@@ -58,7 +63,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        const w = entry.contentRect.width;
+        const w = entries[0]?.contentRect.width ?? 0;
         if (w > 0) setPosterWidth(w);
       }
     });
@@ -81,7 +86,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
       const target = diff > count / 2 ? ai - (count - diff) : ai + diff;
       setActiveIndex(clampIndex(target));
     },
-    [count, isDragging, isKinetic]
+    [count, isDragging, isKinetic, clampIndex]
   );
 
   const startXRef = useRef(0);
@@ -165,7 +170,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
       rafRef.current = requestAnimationFrame(step);
     };
     rafRef.current = requestAnimationFrame(step);
-  }, [setActiveIndex, setDragProgress]);
+  }, [setActiveIndex, setDragProgress, clampIndex]);
 
   const onPointerUp: React.PointerEventHandler<HTMLDivElement> = (e) => {
     if (!isDragging) return;
@@ -217,21 +222,17 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
         {images.map(({ src, width, height }, idx) => {
           const raw = idx - activeIndexFloat;
           const distance = wrappedDistance(raw);
-
           const translateX = `${distance * STEP_PERCENT}%`;
           const scale =
             distance === 0
               ? 1
               : Math.max(0.9, 1 - 0.1 * Math.min(1, Math.abs(distance)));
-
           const a = Math.abs(distance);
           const hidden = a > FAR_HIDE_CUTOFF;
           const opacity = hidden ? 0 : a > 3 ? 0.35 : a > 2 ? 0.7 : 1;
-
           const zIndex = count - Math.round(Math.min(a, 3));
           const rotateY = distance * -MAX_TILT_DEGREES;
           const isActive = a < 0.5;
-
           const eager = a <= PRELOAD_WINDOW;
 
           return (
