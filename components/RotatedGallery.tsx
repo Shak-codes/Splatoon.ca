@@ -29,7 +29,7 @@ const RotatedGallery = ({ images }: RotatedGalleryProps) => {
             alt={`Toronto Splatoon 3 Squid Social Photo ${idx}`}
             width={image.width}
             height={image.height}
-            className="object-cover shadow-xl brightness-40 max-h-[1100px]"
+            className="object-cover shadow-xl brightness-25 max-h-[1100px]"
             style={{ width: `${width}%`, height: "30vh" }}
             sizes="
               (min-width: 1920px) 550px,

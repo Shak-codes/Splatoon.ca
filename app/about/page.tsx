@@ -45,11 +45,15 @@ const About = () => {
           </header>
           <section className="relative flex justify-center items-center bg-black/40 p-2 rounded-sm">
             <RotatedGallery images={images} />
-            <div className="absolute flex justify-center items-center gap-2 p-5">
-              <Typography variant="sectionTitle" size="3xl" className="flex-2">
+            <div className="absolute flex flex-col lg:flex-row justify-center items-center gap-2 p-5">
+              <Typography
+                variant="sectionTitle"
+                size="3xl"
+                className="flex-2 text-center"
+              >
                 The Squid Social team breathes passion.
               </Typography>
-              <Typography className="flex-3">
+              <Typography className="flex-3 text-center lg:text-left">
                 The Squid Social organizers continuously innovate in leaps and
                 bounds to make their events happen. Our founder, Pastecat built
                 Squid Social into the community wide staple it is today. Squid
@@ -116,7 +120,10 @@ const About = () => {
           </section>
         </div>
         {SECTIONS.map(
-          ({ title, subtitle, text, images, width, height, alt }, idx) => {
+          (
+            { title, subtitle, text, images, width, height, alt, landscape },
+            idx
+          ) => {
             const isEven = idx % 2 === 0;
             const backHref = idx === 0 ? "#title" : `#section${idx - 1}`;
             const nextHref = idx === 4 ? "#title" : `#section${idx + 1}`;
@@ -128,18 +135,24 @@ const About = () => {
                 className="min-h-screen flex items-center"
               >
                 <section className="w-full bg-black/40 rounded-sm p-4 sm:p-5">
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-10">
+                  <div
+                    className={`flex flex-col ${
+                      !landscape && "md:flex-row"
+                    } items-center sm:items-start gap-4 sm:gap-10`}
+                  >
                     {isEven && (
                       <Image
                         src={images[0]}
                         width={width}
                         height={height}
                         alt={alt}
-                        className="w-full md:max-w-[50%] h-auto rounded-sm"
+                        className={`w-full ${
+                          !landscape && "md:max-w-[50%]"
+                        } h-auto rounded-sm`}
                       />
                     )}
 
-                    <div className="w-full sm:w-auto space-y-2 sm:space-y-3">
+                    <div className="w-full space-y-2 sm:space-y-3">
                       <Typography
                         variant="sectionTitle"
                         size="sm"
@@ -159,7 +172,9 @@ const About = () => {
                         width={width}
                         height={height}
                         alt={`${idx}`}
-                        className="w-full md:max-w-[50%] h-auto rounded-sm"
+                        className={`w-full ${
+                          !landscape && "md:max-w-[50%]"
+                        } h-auto rounded-sm`}
                       />
                     )}
                   </div>

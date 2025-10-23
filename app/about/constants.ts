@@ -12,6 +12,7 @@ export const SECTIONS = [
     width: 1000,
     height: 1333,
     alt: "Image of Pastecat, Squid Social founder.",
+    landscape: false,
   },
   {
     title: "The First Squid Social",
@@ -22,6 +23,7 @@ export const SECTIONS = [
     width: 1000,
     height: 1545,
     alt: "An image of the first Squid Social poster.",
+    landscape: false,
   },
   {
     title: "Dedication",
@@ -34,6 +36,7 @@ export const SECTIONS = [
     width: 1000,
     height: 1545,
     alt: "A group photo of the Squid Social attendees at Power Up Game Bar.",
+    landscape: true,
   },
   {
     title: "A Bigger Stage",
@@ -48,6 +51,7 @@ export const SECTIONS = [
     width: 1200,
     height: 808,
     alt: "An image of Splatoon at Fanexpo.",
+    landscape: true,
   },
   {
     title: "Passing the Torch",
@@ -60,5 +64,6 @@ export const SECTIONS = [
     width: 1333,
     height: 1000,
     alt: "An image of the Squid Social 20, the last event Pastecat attended.",
+    landscape: true,
   },
 ];
