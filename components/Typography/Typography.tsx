@@ -49,14 +49,21 @@ const Typography = ({
       ? "h6"
       : "p";
 
-  const sizeClass =
-    size === "page-header"
-      ? styles.pageHeader
-      : size === "event-text"
-      ? styles.eventText
-      : size === "event-number"
-      ? styles.eventNumber
-      : `text-${size}`;
+  const sizeMap = {
+    sm: "text-sm",
+    base: "text-base",
+    lg: "text-lg",
+    xl: "text-xl",
+    "2xl": "text-2xl",
+    "3xl": "text-3xl",
+    "4xl": "text-4xl",
+    "5xl": "text-5xl",
+    "page-header": styles.pageHeader,
+    "event-text": styles.eventText,
+    "event-number": styles.eventNumber,
+  } as const;
+
+  const sizeClass = sizeMap[size];
 
   return (
     <Tag
