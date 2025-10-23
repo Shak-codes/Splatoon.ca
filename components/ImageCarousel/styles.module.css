@@ -6,14 +6,26 @@
   overflow: hidden;
   width: 100%;
   height: 250px;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
 }
 
 .posterContainer {
   position: absolute;
-  transition-property: all;
-  transition-duration: 700ms;
+  transition-property: transform, opacity, filter, box-shadow;
+  transition-duration: var(--carousel-snap-ms, 700ms);
   transition-timing-function: ease-in-out;
   width: 150px;
+  cursor: grab;
+}
+
+.posterContainer:active {
+  cursor: grabbing;
+}
+
+.noTransition {
+  transition-duration: 0ms !important;
 }
 
 @media (min-width: 640px) {
