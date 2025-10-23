@@ -75,7 +75,7 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
         />
       </section>
 
-      <section className="w-full flex flex-col md:flex-row md:gap-10 md:justify-center -mt-[var(--text-sm)]">
+      <section className="w-full flex flex-col md:flex-row md:gap-10 md:justify-center -mt-[14px] md:-mt-[var(--text-sm)]">
         <section className="flex justify-center items-center gap-2">
           <Image src={Calendar} alt="Calendar Icon" width={20} height={20} />
           <Typography size="sm">{date}</Typography>
