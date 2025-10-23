@@ -75,7 +75,7 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
         />
       </section>
 
-      <section className="w-full justify-center flex gap-10 -mt-[var(--text-sm)]">
+      <section className="w-full flex flex-col md:flex-row md:gap-10 md:justify-center -mt-[var(--text-sm)]">
         <section className="flex justify-center items-center gap-2">
           <Image src={Calendar} alt="Calendar Icon" width={20} height={20} />
           <Typography size="sm">{date}</Typography>
@@ -93,7 +93,7 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
           the community, these events are the perfect way to connect with fellow
           fans from around the GTA. Mark your calendars, the next Squid Social
           is officially locked in for Sunday October 26th! Join us for an
-          afternoon of fun, laughter and great vibes at Squid Social 27!
+          afternoon of fun, laughter and great vibes at Squid Social 28!
         </Typography>
       </section>
       <Button text="Learn More" href={href} />
