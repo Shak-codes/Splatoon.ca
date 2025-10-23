@@ -73,7 +73,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                     </span>
                     <span
                       aria-hidden
-                      className={`text-xl leading-none flex justify-center flex-1
+                      className={`text-xl leading-none flex justify-center flex-1 w-10 h-7
                                   transition-transform duration-300 ease-in-out origin-center
                                   ${isOpen ? "rotate-45" : "rotate-0"}`}
                     >
