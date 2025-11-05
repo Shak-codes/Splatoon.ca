@@ -60,7 +60,7 @@ export default function Home() {
               className="h-auto"
             />
             <Subtitle
-              subtitle="Grassroots Splatoon Events"
+              subtitle="Canada's Premier\n Splatoon Community"
               className="w-full"
             />
           </section>
