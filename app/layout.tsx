@@ -3,6 +3,7 @@ import "./globals.css";
 import { AccentInitializer } from "@/utils/accentInitializer";
 import localFont from "next/font/local";
 import { BackgroundInitializer } from "@/utils/backgroundInitializer";
+import Script from "next/script";
 
 const auro = localFont({
   src: [
@@ -55,20 +56,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://splatoon.ca"),
   title: "Splatoon Toronto",
   description:
-    "Stay up to date with the grassroots Splatoon community around Toronto.",
+    "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
   openGraph: {
     type: "website",
     url: "https://splatoon.ca",
     title: "Splatoon Toronto",
     description:
-      "Stay up to date with the grassroots Splatoon community around Toronto.",
+      "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
     locale: "en_CA",
     images: [
       {
-        url: "https://splatoon.ca/SplatoonToronto2.webp",
+        url: "https://splatoon.ca/logos/SplatoonTorontoAlt.webp",
         width: 1200,
         height: 1200,
-        alt: "Splatoon Toronto - events, merchandise, and community info!",
+        alt: "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
       },
     ],
   },
@@ -77,8 +78,8 @@ export const metadata: Metadata = {
     site: "@SplatoonToronto",
     title: "Splatoon Toronto",
     description:
-      "Stay up to date with the grassroots Splatoon community around Toronto.",
-    images: ["https://splatoon.ca/SplatoonToronto2.webp"],
+      "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
+    images: ["https://splatoon.ca/logos/SplatoonTorontoAlt.webp"],
   },
   robots: {
     index: true,
@@ -102,8 +103,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Splatoon Toronto",
+    url: "https://splatoon.ca",
+    logo: "https://splatoon.ca/images/logo.png",
+    sameAs: [
+      "https://twitter.com/SplatoonOntario",
+      "https://bsky.app/profile/splatoon.ca",
+      "https://discord.com/invite/squidsocial",
+    ],
+    areaServed: ["Canada", "Ontario", "Toronto"],
+    foundingLocation: "Toronto, Ontario, Canada",
+  };
   return (
-    <html lang="en">
+    <html lang="en-CA">
+      <head>
+        <script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        ></script>
+      </head>
       <body
         className={`${auro.variable} antialiased min-h-screen flex flex-col items-center`}
       >
