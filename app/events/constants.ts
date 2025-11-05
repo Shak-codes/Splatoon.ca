@@ -75,7 +75,7 @@ export const POSTERS = [
     height: 1546,
   },
   {
-    src: "/posters/squid-social-poster-june-2024.webp",
+    src: "/posters/squid-social-poster-jun-2024.webp",
     width: 1000,
     height: 1546,
   },
