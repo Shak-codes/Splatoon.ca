@@ -47,7 +47,7 @@ export default function Home() {
             "
           >
             <Image
-              src="/SplatoonToronto.webp"
+              src="/logos/SplatoonToronto.webp"
               alt="Splatoon Toronto Logo"
               width={2048}
               height={1816}
