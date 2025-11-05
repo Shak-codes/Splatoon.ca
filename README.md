@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) website for the grassroots Splatoon comm
 <img width="3439" height="1439" alt="image" src="https://github.com/user-attachments/assets/c5a28ea3-95f5-41c4-ad87-abe57c25a24c" />
 
 **About**
-<img width="3439" height="1439" alt="image" src="https://github.com/user-attachments/assets/dac1556f-ca99-45a0-b307-94077a855911" />
+<img width="3439" height="1439" alt="image" src="https://github.com/user-attachments/assets/094c3c63-fbba-4760-b928-1e842d947d66" />
 
 **Events**
 <img width="3439" height="1439" alt="image" src="https://github.com/user-attachments/assets/54c9e21f-1bf1-4b7d-8b54-0cd5e9067955" />
