@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Deploy content"
+      - name: "Deploy content to splatoon.ca"
         env:
             SSH_KEY: ${{ secrets.SSH_KEY }}
         run: ssh-agent bash -c "ssh-add <(echo '$SSH_KEY') && ssh splatoon@splatoon.ca"
