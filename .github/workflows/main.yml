@@ -1,0 +1,17 @@
+name: Auto deploy to splatoon.ca
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  deploy:
+    name: "Auto deploy to splatoon.ca"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Deploy"
+        env:
+            SSH_KEY: ${{ secrets.SSH_KEY }}
+      - name: Deploy content
+        run: ssh-agent bash -c "ssh-add <(echo '$SSH_KEY') && ssh splatoon@splatoon.ca"
