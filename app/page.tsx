@@ -57,7 +57,7 @@ export default function Home() {
                     (max-width: 1280px) 600px,
                     (max-width: 1536px) 700px,
                     800px"
-              className="h-auto"
+              className="w-[min(80vw,60vh)] h-auto max-w-[800px]"
             />
             <Subtitle
               subtitle="Canada's Premier\n Splatoon Community"
