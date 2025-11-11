@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) website for the grassroots Splatoon community in Toronto. Check us out at [Splatoon.ca](https://www.Splatoon.ca)!
+This is a [Next.js](https://nextjs.org) website for the grassroots Splatoon community in Toronto. Check us out at [Splatoon.ca](https://Splatoon.ca)!
 
 **Home**
 <img width="3439" height="1439" alt="image" src="https://github.com/user-attachments/assets/c5a28ea3-95f5-41c4-ad87-abe57c25a24c" />
