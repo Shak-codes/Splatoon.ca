@@ -92,7 +92,7 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
           heart of the Toronto. Whether you&apos;re a long time player or new to
           the community, these events are the perfect way to connect with fellow
           fans from around the GTA. Mark your calendars, the next Squid Social
-          is officially locked in for Sunday October 26th! Join us for an
+          is officially locked in for Sunday November 30th! Join us for an
           afternoon of fun, laughter and great vibes at Squid Social{" "}
           {eventNumber}!
         </Typography>
