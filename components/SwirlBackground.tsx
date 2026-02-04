@@ -80,7 +80,7 @@ const fragmentShader = `
     float effect = uFade * falloff * uStrength * uMobileFactor;
 
     // Swirl: rotate around the pointer. Higher multiplier = stronger swirl.
-    float angle = effect * 7.0;
+    float angle = effect * 1.0;
     float s = sin(angle);
     float c = cos(angle);
     vec2 rotatedAspect = vec2(
@@ -88,8 +88,21 @@ const fragmentShader = `
       toMouseAspect.x * s + toMouseAspect.y * c
     );
 
-    // Pinch: scale UVs toward the pointer. Higher factor = stronger pinch.
-    float pinch = 1.0 - effect * 0.5;
+    // Center flip: rotate 180deg right at the core.
+    float flipFalloff = smoothstep(0.08, 0.0, dist);
+    flipFalloff = pow(flipFalloff, 1.6);
+    float flipAngle = 3.14159265 * flipFalloff;
+    float fs = sin(flipAngle);
+    float fc = cos(flipAngle);
+    rotatedAspect = vec2(
+      rotatedAspect.x * fc - rotatedAspect.y * fs,
+      rotatedAspect.x * fs + rotatedAspect.y * fc
+    );
+
+    // Pinch: scale UVs toward the pointer for a strong "void" core.
+    // Invert pinch so center content gets crushed (sample from farther out).
+    float pinchFalloff = smoothstep(0.3, 0.0, dist);
+    float pinch = 1.0 + pinchFalloff * effect * 5.0;
     rotatedAspect *= pinch;
 
     // Convert back to UV space after aspect correction.
