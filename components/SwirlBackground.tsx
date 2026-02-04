@@ -114,7 +114,8 @@ const fragmentShader = `
     vec2 distortedUV = uMouse + rotated;
 
     // Gentle idle wobble keeps things alive when there is no pointer movement.
-    distortedUV += 0.0025 * sin(vec2(1.2, 1.7) * uTime);
+    // Multiply by uFade so it stops when the pointer leaves.
+    distortedUV += 0.0025 * sin(vec2(1.2, 1.7) * uTime) * uFade;
 
     // Avoid sampling outside the texture.
     distortedUV = clamp(distortedUV, vec2(0.0), vec2(1.0));
@@ -258,9 +259,7 @@ export function SwirlBackground({
       handlePointerLeave = () => {
         isPointerInside.current = false;
         fadeTarget.current = 0;
-        // Snap target back to center so distortion fades out cleanly.
-        targetMouse.current.x = 0.5;
-        targetMouse.current.y = 0.5;
+        // Keep swirl at its current position - it will just fade out in place.
       };
 
       plane.onAfterResize(() => {
@@ -306,12 +305,8 @@ export function SwirlBackground({
         }
 
         // Smooth pointer follow.
-        // Use slower easing when pointer leaves so swirl drifts back gently.
-        const mouseEase = isPointerInside.current ? 0.12 : 0.015;
-        mouse.current.x +=
-          (targetMouse.current.x - mouse.current.x) * mouseEase;
-        mouse.current.y +=
-          (targetMouse.current.y - mouse.current.y) * mouseEase;
+        mouse.current.x += (targetMouse.current.x - mouse.current.x) * 0.12;
+        mouse.current.y += (targetMouse.current.y - mouse.current.y) * 0.12;
 
         // Ease in quickly, ease out slowly.
         const fadeSpeed =
