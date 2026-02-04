@@ -80,7 +80,7 @@ const fragmentShader = `
     float effect = uFade * falloff * uStrength * uMobileFactor;
 
     // Swirl: rotate around the pointer. Higher multiplier = stronger swirl.
-    float angle = effect * 1.0;
+    float angle = effect * 3.0;
     float s = sin(angle);
     float c = cos(angle);
     vec2 rotatedAspect = vec2(
@@ -89,9 +89,10 @@ const fragmentShader = `
     );
 
     // Center flip: rotate 180deg right at the core.
-    float flipFalloff = smoothstep(0.08, 0.0, dist);
-    flipFalloff = pow(flipFalloff, 1.6);
-    float flipAngle = 3.14159265 * flipFalloff;
+    // Multiply by uFade so it fades out when the pointer leaves.
+    float flipFalloff = smoothstep(0.18, 0.0, dist);
+    flipFalloff = pow(flipFalloff, 4.6);
+    float flipAngle = 3.14159265 * flipFalloff * uFade;
     float fs = sin(flipAngle);
     float fc = cos(flipAngle);
     rotatedAspect = vec2(
@@ -101,7 +102,9 @@ const fragmentShader = `
 
     // Pinch: scale UVs toward the pointer for a strong "void" core.
     // Invert pinch so center content gets crushed (sample from farther out).
-    float pinchFalloff = smoothstep(0.3, 0.0, dist);
+    // Keep pinch very tight to avoid elongation away from center.
+    float pinchFalloff = smoothstep(0.18, 0.0, dist);
+    pinchFalloff = pow(pinchFalloff, 3.0);
     float pinch = 1.0 + pinchFalloff * effect * 5.0;
     rotatedAspect *= pinch;
 
@@ -127,7 +130,7 @@ export function SwirlBackground({
   idleAmplitude = 0.02,
   imageSrc = "/backgrounds/torontoroka/base.webp",
   fadeInSpeed = 0.12,
-  fadeOutSpeed = 0.04,
+  fadeOutSpeed = 0.015,
 }: SwirlBackgroundProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const planeRef = useRef<HTMLDivElement | null>(null);
@@ -158,7 +161,10 @@ export function SwirlBackground({
 
     let updateMouseFromEvent: ((event: PointerEvent) => void) | null = null;
     let handlePointerLeave: (() => void) | null = null;
+    let handlePointerOut: ((event: PointerEvent) => void) | null = null;
+    let handlePointerOver: ((event: PointerEvent) => void) | null = null;
     let handleWindowMouseOut: ((event: MouseEvent) => void) | null = null;
+    let handleDocumentLeave: (() => void) | null = null;
     let handleVisibilityChange: (() => void) | null = null;
 
     const initCurtains = () => {
@@ -252,6 +258,9 @@ export function SwirlBackground({
       handlePointerLeave = () => {
         isPointerInside.current = false;
         fadeTarget.current = 0;
+        // Snap target back to center so distortion fades out cleanly.
+        targetMouse.current.x = 0.5;
+        targetMouse.current.y = 0.5;
       };
 
       plane.onAfterResize(() => {
@@ -289,15 +298,7 @@ export function SwirlBackground({
         const idle = now - lastInput.current > 1000;
         const idleForMobile = isCoarse.current && idle;
 
-        if (idleForMobile) {
-          targetMouse.current.x = 0.5 + Math.sin(time * 0.4) * idleAmplitude;
-          targetMouse.current.y = 0.5 + Math.cos(time * 0.35) * idleAmplitude;
-        }
-
-        // Keep a small baseline effect on touch devices so the background feels alive.
-        if (idleForMobile) {
-          fadeTarget.current = Math.max(fadeTarget.current, 0.35);
-        }
+        // No idle animation; only react when the pointer is on screen.
 
         // Desktop: if the pointer leaves the viewport, remove the effect.
         if (!isCoarse.current && !isPointerInside.current) {
@@ -305,8 +306,12 @@ export function SwirlBackground({
         }
 
         // Smooth pointer follow.
-        mouse.current.x += (targetMouse.current.x - mouse.current.x) * 0.12;
-        mouse.current.y += (targetMouse.current.y - mouse.current.y) * 0.12;
+        // Use slower easing when pointer leaves so swirl drifts back gently.
+        const mouseEase = isPointerInside.current ? 0.12 : 0.015;
+        mouse.current.x +=
+          (targetMouse.current.x - mouse.current.x) * mouseEase;
+        mouse.current.y +=
+          (targetMouse.current.y - mouse.current.y) * mouseEase;
 
         // Ease in quickly, ease out slowly.
         const fadeSpeed =
@@ -330,13 +335,25 @@ export function SwirlBackground({
       window.addEventListener("pointerdown", updateMouseFromEvent, {
         passive: true,
       });
-      window.addEventListener("pointerenter", updateMouseFromEvent, {
-        passive: true,
-      });
+
       handleWindowMouseOut = (event: MouseEvent) => {
+        // When mouse leaves the browser window, relatedTarget is null
+        if (!event.relatedTarget && event.target === document.documentElement) {
+          handlePointerLeave?.();
+        }
+      };
+      handlePointerOut = (event: PointerEvent) => {
         if (!event.relatedTarget) {
           handlePointerLeave?.();
         }
+      };
+      handlePointerOver = (event: PointerEvent) => {
+        if (!isPointerInside.current) {
+          updateMouseFromEvent?.(event);
+        }
+      };
+      handleDocumentLeave = () => {
+        handlePointerLeave?.();
       };
       handleVisibilityChange = () => {
         if (document.hidden) {
@@ -344,7 +361,19 @@ export function SwirlBackground({
         }
       };
 
-      window.addEventListener("pointerleave", handlePointerLeave);
+      // Use document.documentElement (the <html> element) for reliable mouse leave detection
+      document.documentElement.addEventListener(
+        "mouseleave",
+        handleDocumentLeave,
+      );
+      document.documentElement.addEventListener(
+        "mouseenter",
+        handlePointerOver as EventListener,
+        {
+          passive: true,
+        },
+      );
+      window.addEventListener("pointerout", handlePointerOut);
       window.addEventListener("mouseout", handleWindowMouseOut);
       document.addEventListener("visibilitychange", handleVisibilityChange);
       window.addEventListener("blur", handlePointerLeave);
@@ -364,14 +393,27 @@ export function SwirlBackground({
       if (updateMouseFromEvent) {
         window.removeEventListener("pointermove", updateMouseFromEvent);
         window.removeEventListener("pointerdown", updateMouseFromEvent);
-        window.removeEventListener("pointerenter", updateMouseFromEvent);
       }
       if (handlePointerLeave) {
-        window.removeEventListener("pointerleave", handlePointerLeave);
         window.removeEventListener("blur", handlePointerLeave);
+      }
+      if (handlePointerOut) {
+        window.removeEventListener("pointerout", handlePointerOut);
+      }
+      if (handlePointerOver) {
+        document.documentElement.removeEventListener(
+          "mouseenter",
+          handlePointerOver as EventListener,
+        );
       }
       if (handleWindowMouseOut) {
         window.removeEventListener("mouseout", handleWindowMouseOut);
+      }
+      if (handleDocumentLeave) {
+        document.documentElement.removeEventListener(
+          "mouseleave",
+          handleDocumentLeave,
+        );
       }
       if (handleVisibilityChange) {
         document.removeEventListener(
