@@ -56,11 +56,12 @@ const fragmentShader = `
   uniform float uFade;
   uniform float uTime;
   uniform float uMobileFactor;
+  uniform float uBaseOpacity;
+  uniform float uMaxOpacity;
 
   void main() {
     vec2 uv = vTextureCoord;
     float aspect = uResolution.x / uResolution.y;
-
 
     // Vector from current pixel to the pointer in UV space (aspect-corrected).
     vec2 toMouse = uv - uMouse;
@@ -120,7 +121,18 @@ const fragmentShader = `
     // Avoid sampling outside the texture.
     distortedUV = clamp(distortedUV, vec2(0.0), vec2(1.0));
 
-    gl_FragColor = texture2D(uTexture, distortedUV);
+    vec4 texColor = texture2D(uTexture, distortedUV);
+    
+    // Calculate opacity based on distance from mouse.
+    // Use a wider falloff for opacity than for the swirl effect.
+    float opacityFalloff = smoothstep(uRadius * 1.5, 0.0, dist);
+    opacityFalloff = pow(opacityFalloff, 0.8);
+    
+    // Blend between base opacity and max opacity based on proximity to mouse.
+    // Multiply by uFade so it returns to base when pointer leaves.
+    float opacity = uBaseOpacity + (uMaxOpacity - uBaseOpacity) * opacityFalloff * uFade;
+    
+    gl_FragColor = vec4(texColor.rgb, texColor.a * opacity);
   }
 `;
 
@@ -229,6 +241,16 @@ export function SwirlBackground({
             name: "uMobileFactor",
             type: "1f",
             value: mobileScale,
+          },
+          uBaseOpacity: {
+            name: "uBaseOpacity",
+            type: "1f",
+            value: 0.3,
+          },
+          uMaxOpacity: {
+            name: "uMaxOpacity",
+            type: "1f",
+            value: 0.85,
           },
         },
       };
