@@ -16,7 +16,7 @@ const Events = () => {
       <Navbar config={navLinks} socials={navSocials} />
       <main className="mainContainer">
         <EventHeader
-          date="Sunday November 30th"
+          date="Sunday April 19th"
           location="558 Yonge Street"
           href="#details"
           className="min-h-screen"
