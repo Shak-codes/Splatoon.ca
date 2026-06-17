@@ -1,12 +1,14 @@
 "use client";
 
+import { ReactNode } from "react";
 import { useState } from "react";
 import Typography from "./Typography/Typography";
+import typographyStyles from "./Typography/styles.module.css";
 
 type FAQItem = {
   id?: string;
   question: string;
-  answer: string;
+  answer: ReactNode;
 };
 
 type FAQSection = {
@@ -88,9 +90,17 @@ const FAQ = ({ faqData }: FAQProps) => {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <Typography variant="paragraph" size="sm">
-                      {faq.answer}
-                    </Typography>
+                    {typeof faq.answer === "string" ? (
+                      <Typography variant="paragraph" size="sm">
+                        {faq.answer}
+                      </Typography>
+                    ) : (
+                      <div
+                        className={`${typographyStyles.size} ${typographyStyles.typography} ${typographyStyles.paragraph} text-sm space-y-3`}
+                      >
+                        {faq.answer}
+                      </div>
+                    )}
                   </div>
                 </div>
               );

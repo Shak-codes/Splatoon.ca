@@ -16,8 +16,8 @@ const Events = () => {
       <Navbar config={navLinks} socials={navSocials} />
       <main className="mainContainer">
         <EventHeader
-          date="Sunday May 31st"
-          location="558 Yonge Street"
+          date="Sunday June 29th"
+          location="Room 120, Woodsworth College, University of Toronto"
           href="#details"
           className="min-h-screen"
         />
@@ -28,8 +28,8 @@ const Events = () => {
               We pride ourselves on bringing together people from all facets of
               the community. Whether you&apos;re a competitive player, casual,
               or even just getting into the series you&apos;ll have a great
-              time! Hosted at Invictus Game Station in Toronto, we run
-              competitive and casual matches for all to enjoy!
+              time! Hosted at Woodsworth College in Toronto, we run competitive
+              and casual matches for all to enjoy!
             </Typography>
             <Typography>
               If you&apos;re participating in the competitive matches,

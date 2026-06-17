@@ -24,7 +24,7 @@ const flairOffsetMap: Record<
   9: 1,
 };
 
-const eventNumber = 32;
+const eventNumber = 33;
 const lastDigit = Number(String(eventNumber).slice(-1)) as
   | 0
   | 1
@@ -92,9 +92,8 @@ const EventHeader = ({ date, location, href, className }: EventHeaderProps) => {
           heart of the Toronto. Whether you&apos;re a long time player or new to
           the community, these events are the perfect way to connect with fellow
           fans from around the GTA. Mark your calendars, the next Squid Social
-          is officially locked in for Sunday May 31st! Join us for an
-          afternoon of fun, laughter and great vibes at Squid Social{" "}
-          {eventNumber}!
+          is officially locked in for Sunday June 29th! Join us for an afternoon
+          of fun, laughter and great vibes at Squid Social {eventNumber}!
         </Typography>
       </section>
       <Button text="Learn More" href={href} />

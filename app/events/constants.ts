@@ -116,7 +116,7 @@ export const CHECKLIST = [
     id: "1",
     name: "Venue Fee",
     description:
-      "The venue fee is 25 dollars + tax. Cash and card are accepted.",
+      "The venue fee is 10 dollars flat for players and free for spectators.",
     mandatory: true,
   },
   {

@@ -9,9 +9,29 @@ const testFAQ = [
     section: "Accessing the venue",
     faqs: [
       {
-        question: "Does Invictus have on-site parking?",
-        answer:
-          "Invictus does not have on-site parking, however, there are many parking garages around the area.",
+        question: "Is there parking near the venue?",
+        answer: (
+          <>
+            <p>
+              Yes, multiple parking options are located within a 5-minute walk
+              of Woodsworth College:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                Rotman Garage (107 St George St): $4/half-hour, $20 daily max,
+                $10 evening/weekend flat rate (1-min walk).
+              </li>
+              <li>
+                371 Bloor St W Lot: $4/half-hour, $13 daily max, $7 weekend flat
+                rate (4-min walk).
+              </li>
+              <li>
+                Street Parking: Metered spots available directly on St. George
+                Street.
+              </li>
+            </ul>
+          </>
+        ),
       },
       {
         question: "Do I have to show up at noon?",
@@ -31,7 +51,7 @@ const testFAQ = [
       {
         question: "Is food allowed in the venue?",
         answer:
-          "Invictus doesn't allow any outside food or drinks inside the venue aside from a water bottle. That being said, Invictus does sell their own food and drinks within the venue.",
+          "Yes, food is allowed in the venue. Please ensure to clean up after yourself.",
       },
       {
         question:
