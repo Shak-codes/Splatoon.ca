@@ -21,7 +21,7 @@ export const navSocials = [
     alt: "Discord",
   },
   {
-    href: "https://www.twitter.com/SplatoonGTA",
+    href: "https://www.twitter.com/SplatoonOntario",
     icon: Twitter,
     alt: "Twitter",
   },
