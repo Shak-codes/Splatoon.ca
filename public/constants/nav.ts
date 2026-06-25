@@ -1,6 +1,7 @@
 import Bluesky from "@/public/socials/bluesky.svg";
 import Twitter from "@/public/socials/twitter.svg";
 import Discord from "@/public/socials/discord.svg";
+import Instagram from "@/public/icons/instagram.webp";
 
 export const navLinks = [
   { title: "HOME", href: "/" },
@@ -24,5 +25,10 @@ export const navSocials = [
     href: "https://www.twitter.com/SplatoonOntario",
     icon: Twitter,
     alt: "Twitter",
+  },
+  {
+    href: "https://www.instagram.com/splatoontoronto",
+    icon: Instagram,
+    alt: "Instagram",
   },
 ];
