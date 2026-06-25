@@ -1,4 +1,5 @@
 import Typography from "./Typography/Typography";
+import stagger from "./stagger.module.css";
 
 type HeaderProps = {
   title: string;
@@ -42,14 +43,13 @@ const Header = ({
         {lines.map((line, lineIdx) => {
           const chars = Array.from(line);
           return (
-            <span key={lineIdx} className="block">
+            <span key={lineIdx} className={`block ${stagger.stagger}`}>
               {chars.map((ch, i) => (
                 <span
                   key={`${lineIdx}-${i}`}
                   className={`animate-letter tracking-wider ${
                     lineIdx > 0 ? "text-[var(--primary)]" : "text-white"
                   }`}
-                  style={{ animationDelay: `${i * 0.08}s` }}
                 >
                   {ch === " " ? "\u00A0" : ch}
                 </span>

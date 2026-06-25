@@ -9,6 +9,14 @@ import { POSTERS } from "./constants";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 import Checklist from "@/components/Checklist";
 import { CHECKLIST } from "./constants";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Splatoon Events in Toronto",
+  description:
+    "Join Splatoon Toronto's casual and competitive Splatoon 3 events in Toronto. All skill levels welcome — see event details, what to bring, and posters.",
+  alternates: { canonical: "/events" },
+};
 
 const Events = () => {
   return (

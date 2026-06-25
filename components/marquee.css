@@ -11,3 +11,70 @@
 .marquee {
   animation: marquee 10s linear infinite;
 }
+
+/* Per-image sizing for the diagonal marquee gallery. Width is derived from the
+   number of images ((100 - n) / n vw); using count classes keeps the rendered
+   HTML free of inline styles. */
+.marquee img {
+  height: 30vh;
+}
+.marquee-count-1 img {
+  width: 99vw;
+}
+.marquee-count-2 img {
+  width: 49vw;
+}
+.marquee-count-3 img {
+  width: 32.3333vw;
+}
+.marquee-count-4 img {
+  width: 24vw;
+}
+.marquee-count-5 img {
+  width: 19vw;
+}
+.marquee-count-6 img {
+  width: 15.6667vw;
+}
+.marquee-count-7 img {
+  width: 13.2857vw;
+}
+.marquee-count-8 img {
+  width: 11.5vw;
+}
+.marquee-count-9 img {
+  width: 10.1111vw;
+}
+.marquee-count-10 img {
+  width: 9vw;
+}
+.marquee-count-11 img {
+  width: 8.0909vw;
+}
+.marquee-count-12 img {
+  width: 7.3333vw;
+}
+.marquee-count-13 img {
+  width: 6.6923vw;
+}
+.marquee-count-14 img {
+  width: 6.1429vw;
+}
+.marquee-count-15 img {
+  width: 5.6667vw;
+}
+.marquee-count-16 img {
+  width: 5.25vw;
+}
+.marquee-count-17 img {
+  width: 4.8824vw;
+}
+.marquee-count-18 img {
+  width: 4.5556vw;
+}
+.marquee-count-19 img {
+  width: 4.2632vw;
+}
+.marquee-count-20 img {
+  width: 4vw;
+}
