@@ -27,7 +27,11 @@ const FAQ = ({ faqData }: FAQProps) => {
     setOpen((prev) => {
       const newSet = new Set(prev);
       const key = `${sidx}-${fidx}`;
-      newSet.has(key) ? newSet.delete(key) : newSet.add(key);
+      if (newSet.has(key)) {
+        newSet.delete(key);
+      } else {
+        newSet.add(key);
+      }
       return newSet;
     });
   };

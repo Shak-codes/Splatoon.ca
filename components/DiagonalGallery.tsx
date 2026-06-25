@@ -42,8 +42,7 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
             height={image.height}
             loading="lazy"
             decoding="async"
-            quality={65}
-            sizes="(max-width: 768px) 16vw, (max-width: 1280px) 10vw, 6vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-cover shadow-xl brightness-80 max-h-[1100px]"
           />
         ))}

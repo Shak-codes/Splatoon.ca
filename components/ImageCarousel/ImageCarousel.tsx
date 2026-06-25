@@ -40,16 +40,16 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const dragProgressRef = useRef(dragProgress);
   const velocityRef = useRef(0);
 
-  const setActiveIndex = (v: Updater) => {
+  const setActiveIndex = useCallback((v: Updater) => {
     const next = isUpdater(v) ? v(activeIndexRef.current) : v;
     activeIndexRef.current = next;
     _setActiveIndex(next);
-  };
-  const setDragProgress = (v: Updater) => {
+  }, []);
+  const setDragProgress = useCallback((v: Updater) => {
     const next = isUpdater(v) ? v(dragProgressRef.current) : v;
     dragProgressRef.current = next;
     _setDragProgress(next);
-  };
+  }, []);
 
   const clampIndex = useCallback(
     (i: number) => ((i % count) + count) % count,
@@ -62,10 +62,8 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     const el = posterRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const w = entries[0]?.contentRect.width ?? 0;
-        if (w > 0) setPosterWidth(w);
-      }
+      const w = entries[0]?.contentRect.width ?? 0;
+      if (w > 0) setPosterWidth(w);
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -86,7 +84,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
       const target = diff > count / 2 ? ai - (count - diff) : ai + diff;
       setActiveIndex(clampIndex(target));
     },
-    [count, isDragging, isKinetic, clampIndex]
+    [count, isDragging, isKinetic, clampIndex, setActiveIndex]
   );
 
   const startXRef = useRef(0);
@@ -267,6 +265,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                 draggable={false}
                 priority={isActive}
                 loading={eager ? "eager" : "lazy"}
+                sizes="(min-width: 1536px) 275px, (min-width: 1024px) 250px, (min-width: 768px) 200px, (min-width: 640px) 175px, 150px"
                 className={`
                   object-contain w-full rounded-sm shadow-lg
                   transition-all duration-500 ease-in-out
