@@ -91,7 +91,7 @@ export default function RootLayout({
     "https://twitter.com/SplatoonOntario",
     "https://bsky.app/profile/splatoon.ca",
     "https://www.instagram.com/splatoontoronto",
-    "https://discord.com/invite/squidsocial",
+    "https://discord.gg/dB2XJ7M682",
   ];
 
   const organizationSchema = {
