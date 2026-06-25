@@ -61,12 +61,12 @@ export default function Home() {
                 Toronto&apos;s Home for Splatoon
               </Typography>
               <Typography size="base">
-                Splatoon Toronto — known to the community as Squid Social — is
-                Canada&apos;s premier Splatoon community. Since the early days of
-                the original Splatoon on the Wii U, we&apos;ve brought players
-                across Toronto and the Greater Toronto Area together to
-                celebrate the game we love. Today we run regular Splatoon 3
-                events on the Nintendo Switch for players of every skill level.
+                Splatoon Toronto is Canada&apos;s premier Splatoon community.
+                Since the early days of the original Splatoon on the Wii U,
+                we&apos;ve brought players across Toronto and the Greater
+                Toronto Area together to celebrate the game we love. Today we
+                run regular Splatoon 3 events on the Nintendo Switch for players
+                of every skill level.
               </Typography>
 
               <Typography variant="sectionTitle" size="xl">
@@ -75,7 +75,7 @@ export default function Home() {
               <Typography size="base">
                 Every event features both competitive round-robin brackets and
                 relaxed casual lobbies. There&apos;s absolutely no skill
-                requirement to join — whether you&apos;re a seasoned veteran or
+                requirement to join. Whether you&apos;re a seasoned veteran or
                 picking up your controller for the first time, you&apos;ll find
                 a welcoming game and a friendly crowd here in Toronto.
               </Typography>
@@ -87,7 +87,8 @@ export default function Home() {
                 Squid Social started as a small gathering between friends and
                 grew into a recognized staple of the Canadian Splatoon scene.
                 Come hang out, meet local players, grab an event poster, and
-                become part of the GTA&apos;s longest-running Splatoon community.
+                become part of the GTA&apos;s longest-running Splatoon
+                community.
               </Typography>
 
               <Typography variant="sectionTitle" size="xl">
