@@ -49,3 +49,5 @@ next-env.d.ts
 !public/socials/*
 !public/icons/*
 !public/flourish/*
+# Next.js app icon convention files (favicons) must be tracked so they deploy
+!app/icon*.svg
