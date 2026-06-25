@@ -3,7 +3,6 @@ import "./globals.css";
 import { AccentInitializer } from "@/utils/accentInitializer";
 import localFont from "next/font/local";
 import { BackgroundInitializer } from "@/utils/backgroundInitializer";
-import Script from "next/script";
 
 const auro = localFont({
   src: [
@@ -52,33 +51,50 @@ const auro = localFont({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Splatoon Toronto (Squid Social) is Canada's premier Splatoon community, hosting casual and competitive Nintendo Switch events in Toronto and the GTA.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://splatoon.ca"),
-  title: "Splatoon Toronto",
-  description:
-    "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
+  title: {
+    default: "Splatoon Toronto | Canada's Premier Splatoon Community",
+    template: "%s | Splatoon Toronto",
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "Splatoon Toronto",
+    "Splatoon Canada",
+    "Squid Social",
+    "Splatoon events",
+    "Splatoon tournament Toronto",
+    "Nintendo Switch events Toronto",
+    "Splatoon 3 community",
+    "GTA gaming community",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: "https://splatoon.ca",
-    title: "Splatoon Toronto",
-    description:
-      "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
+    siteName: "Splatoon Toronto",
+    title: "Splatoon Toronto | Canada's Premier Splatoon Community",
+    description: DESCRIPTION,
     locale: "en_CA",
     images: [
       {
         url: "https://splatoon.ca/logos/SplatoonTorontoAlt.webp",
         width: 1200,
         height: 1200,
-        alt: "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
+        alt: "Splatoon Toronto - Canada's premier Splatoon community",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@SplatoonToronto",
-    title: "Splatoon Toronto",
-    description:
-      "Splatoon Toronto - The premier Splatoon group in Toronto, Ontario, Canada!",
+    title: "Splatoon Toronto | Canada's Premier Splatoon Community",
+    description: DESCRIPTION,
     images: ["https://splatoon.ca/logos/SplatoonTorontoAlt.webp"],
   },
   robots: {
@@ -103,19 +119,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const sameAs = [
+    "https://twitter.com/SplatoonOntario",
+    "https://bsky.app/profile/splatoon.ca",
+    "https://www.instagram.com/splatoontoronto",
+    "https://discord.com/invite/squidsocial",
+  ];
+
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Splatoon Toronto",
-    url: "https://splatoon.ca",
-    logo: "https://splatoon.ca/images/logo.png",
-    sameAs: [
-      "https://twitter.com/SplatoonOntario",
-      "https://bsky.app/profile/splatoon.ca",
-      "https://discord.com/invite/squidsocial",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://splatoon.ca/#organization",
+        name: "Splatoon Toronto",
+        alternateName: "Squid Social",
+        url: "https://splatoon.ca",
+        logo: "https://splatoon.ca/logos/SplatoonTorontoAlt.webp",
+        description:
+          "Canada's premier Splatoon community, hosting casual and competitive Nintendo Switch events in Toronto and the Greater Toronto Area.",
+        sameAs,
+        areaServed: ["Canada", "Ontario", "Toronto"],
+        foundingLocation: "Toronto, Ontario, Canada",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://splatoon.ca/#localbusiness",
+        name: "Splatoon Toronto",
+        alternateName: "Squid Social",
+        url: "https://splatoon.ca",
+        image: "https://splatoon.ca/logos/SplatoonTorontoAlt.webp",
+        logo: "https://splatoon.ca/logos/SplatoonTorontoAlt.webp",
+        description:
+          "Canada's premier Splatoon community, hosting casual and competitive Nintendo Switch events in Toronto and the Greater Toronto Area.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Toronto",
+          addressRegion: "ON",
+          addressCountry: "CA",
+        },
+        areaServed: ["Toronto", "Ontario", "Canada"],
+        sameAs,
+      },
     ],
-    areaServed: ["Canada", "Ontario", "Toronto"],
-    foundingLocation: "Toronto, Ontario, Canada",
   };
   return (
     <html lang="en-CA">

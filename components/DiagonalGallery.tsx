@@ -15,7 +15,6 @@ interface DiagonalGalleryProps {
 const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
   console.log("Passed in", images.length, "images!");
   const loop = useMemo(() => [...images, ...images, images[0]], [images]);
-  const width = (100 - images.length) / images.length;
 
   return (
     <div
@@ -28,11 +27,11 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
       "
     >
       <div
-        className="
+        className={`
           flex gap-[1vw]
           transform rotate-[-3deg]
-          marquee
-        "
+          marquee marquee-count-${images.length}
+        `}
       >
         {loop.map((image, idx) => (
           <Image
@@ -42,7 +41,6 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
             width={image.width}
             height={image.height}
             className="object-cover shadow-xl brightness-80 max-h-[1100px]"
-            style={{ width: `${width}vw`, height: "30vh" }}
           />
         ))}
       </div>

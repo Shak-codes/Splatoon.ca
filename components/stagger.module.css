@@ -1,0 +1,184 @@
+/* Staggered animation delays for per-character heading/subtitle animations.
+   Replaces inline style={{ animationDelay }} so the rendered HTML stays free of
+   inline styles. Each direct child span animates 0.08s after the previous one. */
+
+.stagger > span:nth-child(1) {
+  animation-delay: 0s;
+}
+.stagger > span:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.stagger > span:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.stagger > span:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.stagger > span:nth-child(5) {
+  animation-delay: 0.32s;
+}
+.stagger > span:nth-child(6) {
+  animation-delay: 0.4s;
+}
+.stagger > span:nth-child(7) {
+  animation-delay: 0.48s;
+}
+.stagger > span:nth-child(8) {
+  animation-delay: 0.56s;
+}
+.stagger > span:nth-child(9) {
+  animation-delay: 0.64s;
+}
+.stagger > span:nth-child(10) {
+  animation-delay: 0.72s;
+}
+.stagger > span:nth-child(11) {
+  animation-delay: 0.8s;
+}
+.stagger > span:nth-child(12) {
+  animation-delay: 0.88s;
+}
+.stagger > span:nth-child(13) {
+  animation-delay: 0.96s;
+}
+.stagger > span:nth-child(14) {
+  animation-delay: 1.04s;
+}
+.stagger > span:nth-child(15) {
+  animation-delay: 1.12s;
+}
+.stagger > span:nth-child(16) {
+  animation-delay: 1.2s;
+}
+.stagger > span:nth-child(17) {
+  animation-delay: 1.28s;
+}
+.stagger > span:nth-child(18) {
+  animation-delay: 1.36s;
+}
+.stagger > span:nth-child(19) {
+  animation-delay: 1.44s;
+}
+.stagger > span:nth-child(20) {
+  animation-delay: 1.52s;
+}
+.stagger > span:nth-child(21) {
+  animation-delay: 1.6s;
+}
+.stagger > span:nth-child(22) {
+  animation-delay: 1.68s;
+}
+.stagger > span:nth-child(23) {
+  animation-delay: 1.76s;
+}
+.stagger > span:nth-child(24) {
+  animation-delay: 1.84s;
+}
+.stagger > span:nth-child(25) {
+  animation-delay: 1.92s;
+}
+.stagger > span:nth-child(26) {
+  animation-delay: 2s;
+}
+.stagger > span:nth-child(27) {
+  animation-delay: 2.08s;
+}
+.stagger > span:nth-child(28) {
+  animation-delay: 2.16s;
+}
+.stagger > span:nth-child(29) {
+  animation-delay: 2.24s;
+}
+.stagger > span:nth-child(30) {
+  animation-delay: 2.32s;
+}
+.stagger > span:nth-child(31) {
+  animation-delay: 2.4s;
+}
+.stagger > span:nth-child(32) {
+  animation-delay: 2.48s;
+}
+.stagger > span:nth-child(33) {
+  animation-delay: 2.56s;
+}
+.stagger > span:nth-child(34) {
+  animation-delay: 2.64s;
+}
+.stagger > span:nth-child(35) {
+  animation-delay: 2.72s;
+}
+.stagger > span:nth-child(36) {
+  animation-delay: 2.8s;
+}
+.stagger > span:nth-child(37) {
+  animation-delay: 2.88s;
+}
+.stagger > span:nth-child(38) {
+  animation-delay: 2.96s;
+}
+.stagger > span:nth-child(39) {
+  animation-delay: 3.04s;
+}
+.stagger > span:nth-child(40) {
+  animation-delay: 3.12s;
+}
+.stagger > span:nth-child(41) {
+  animation-delay: 3.2s;
+}
+.stagger > span:nth-child(42) {
+  animation-delay: 3.28s;
+}
+.stagger > span:nth-child(43) {
+  animation-delay: 3.36s;
+}
+.stagger > span:nth-child(44) {
+  animation-delay: 3.44s;
+}
+.stagger > span:nth-child(45) {
+  animation-delay: 3.52s;
+}
+.stagger > span:nth-child(46) {
+  animation-delay: 3.6s;
+}
+.stagger > span:nth-child(47) {
+  animation-delay: 3.68s;
+}
+.stagger > span:nth-child(48) {
+  animation-delay: 3.76s;
+}
+.stagger > span:nth-child(49) {
+  animation-delay: 3.84s;
+}
+.stagger > span:nth-child(50) {
+  animation-delay: 3.92s;
+}
+.stagger > span:nth-child(51) {
+  animation-delay: 4s;
+}
+.stagger > span:nth-child(52) {
+  animation-delay: 4.08s;
+}
+.stagger > span:nth-child(53) {
+  animation-delay: 4.16s;
+}
+.stagger > span:nth-child(54) {
+  animation-delay: 4.24s;
+}
+.stagger > span:nth-child(55) {
+  animation-delay: 4.32s;
+}
+.stagger > span:nth-child(56) {
+  animation-delay: 4.4s;
+}
+.stagger > span:nth-child(57) {
+  animation-delay: 4.48s;
+}
+.stagger > span:nth-child(58) {
+  animation-delay: 4.56s;
+}
+.stagger > span:nth-child(59) {
+  animation-delay: 4.64s;
+}
+.stagger > span:nth-child(60) {
+  animation-delay: 4.72s;
+}

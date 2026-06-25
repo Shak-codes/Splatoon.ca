@@ -3,6 +3,14 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import { navLinks, navSocials } from "@/public/constants/nav";
 import Header from "@/components/Header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions",
+  description:
+    "Answers to common questions about Splatoon Toronto events — venue access, parking, skill levels, what to bring, and more for our Splatoon 3 meetups.",
+  alternates: { canonical: "/faq" },
+};
 
 const testFAQ = [
   {
