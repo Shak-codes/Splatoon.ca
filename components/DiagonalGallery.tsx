@@ -27,11 +27,11 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
       "
     >
       <div
-        className={`
+        className="
           flex gap-[1vw]
           transform rotate-[-3deg]
-          marquee marquee-count-${images.length}
-        `}
+          marquee
+        "
       >
         {loop.map((image, idx) => (
           <Image
@@ -40,6 +40,10 @@ const DiagonalGallery = ({ images }: DiagonalGalleryProps) => {
             alt={`Toronto Splatoon 3 Squid Social Photo ${idx}`}
             width={image.width}
             height={image.height}
+            loading="lazy"
+            decoding="async"
+            quality={65}
+            sizes="(max-width: 768px) 16vw, (max-width: 1280px) 10vw, 6vw"
             className="object-cover shadow-xl brightness-80 max-h-[1100px]"
           />
         ))}
