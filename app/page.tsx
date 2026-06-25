@@ -1,9 +1,7 @@
-"use client";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import { navLinks, navSocials } from "@/public/constants/nav";
 import DiagonalGallery from "@/components/DiagonalGallery";
-import { useBreakpoint } from "@/utils/useBreakpoint";
 import Image from "next/image";
 import Link from "next/link";
 import Subtitle from "@/components/Subtitle";
@@ -11,23 +9,11 @@ import Typography from "@/components/Typography/Typography";
 import { SQUIDSOCIAL_IMGS } from "./constants";
 
 export default function Home() {
-  const bp = useBreakpoint();
-
-  const count =
-    bp === "5xl"
-      ? 18
-      : bp === "4xl"
-      ? 16
-      : bp === "3xl"
-      ? 14
-      : bp === "2xl"
-      ? 12
-      : bp === "xl"
-      ? 10
-      : bp === "lg"
-      ? 8
-      : 6;
-  const images = SQUIDSOCIAL_IMGS.slice(0, count);
+  // The full image set is rendered on the server; how many appear across the
+  // viewport is decided purely by CSS (see marquee.css). This keeps the SSR and
+  // hydrated output identical, avoiding the layout shift the old JS breakpoint
+  // count produced. Off-screen marquee images are lazy-loaded as they scroll in.
+  const images = SQUIDSOCIAL_IMGS;
 
   return (
     <div className="relative">
@@ -53,12 +39,10 @@ export default function Home() {
                 alt="Splatoon Toronto Logo"
                 width={2048}
                 height={1816}
-                sizes="(max-width: 360px) 300px,
-                      (max-width: 640px) 400px,
-                      (max-width: 1024px) 500px,
-                      (max-width: 1280px) 600px,
-                      (max-width: 1536px) 700px,
-                      800px"
+                priority
+                fetchPriority="high"
+                quality={65}
+                sizes="(max-width: 768px) 80vw, 650px"
                 className="w-[min(80vw,60vh)] h-auto max-w-[800px]"
               />
               <Subtitle

@@ -4,48 +4,16 @@ import { AccentInitializer } from "@/utils/accentInitializer";
 import localFont from "next/font/local";
 import { BackgroundInitializer } from "@/utils/backgroundInitializer";
 
+// Only the weights actually used by the Typography component are loaded:
+// 400/500/700/900 (600 -> 700 and 800 -> 900 resolve to these via CSS font
+// matching). Italics and the 200/300 weights were never referenced, so they
+// are omitted. Fonts are subsetted WOFF2 (Latin + typographic glyphs) for size.
 const auro = localFont({
   src: [
-    { path: "../public/fonts/Auro-Light.otf", weight: "200", style: "normal" },
-    {
-      path: "../public/fonts/Auro-Light Italic.otf",
-      weight: "200",
-      style: "italic",
-    },
-    { path: "../public/fonts/Auro-Book.otf", weight: "300", style: "normal" },
-    {
-      path: "../public/fonts/Auro-Book Italic.otf",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Auro-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Auro-Regular Italic.otf",
-      weight: "400",
-      style: "italic",
-    },
-    { path: "../public/fonts/Auro-Medium.otf", weight: "500", style: "normal" },
-    {
-      path: "../public/fonts/Auro-Medium Italic.otf",
-      weight: "500",
-      style: "italic",
-    },
-    { path: "../public/fonts/Auro-Bold.otf", weight: "700", style: "normal" },
-    {
-      path: "../public/fonts/Auro-Bold Italic.otf",
-      weight: "700",
-      style: "italic",
-    },
-    { path: "../public/fonts/Auro-Black.otf", weight: "900", style: "normal" },
-    {
-      path: "../public/fonts/Auro-Black Italic.otf",
-      weight: "900",
-      style: "italic",
-    },
+    { path: "../public/fonts/Auro-400.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Auro-500.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Auro-700.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/Auro-900.woff2", weight: "900", style: "normal" },
   ],
   variable: "--font-auro",
   display: "swap",
