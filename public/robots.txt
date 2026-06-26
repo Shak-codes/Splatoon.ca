@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://splatoon.ca
+Sitemap: https://splatoon.ca/sitemap.xml
