@@ -17,7 +17,7 @@ export const navSocials = [
     alt: "Bluesky",
   },
   {
-    href: "https://discord.com/invite/squidsocial",
+    href: "https://discord.com/invite/dB2XJ7M682",
     icon: Discord,
     alt: "Discord",
   },
