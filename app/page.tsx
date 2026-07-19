@@ -124,7 +124,7 @@ export default function Home() {
                 </Link>
                 , or join our{" "}
                 <Link
-                  href="https://discord.com/invite/squidsocial"
+                  href="https://discord.com/invite/dB2XJ7M682"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline text-[var(--primary)]"
