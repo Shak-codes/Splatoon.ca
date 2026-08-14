@@ -24,7 +24,7 @@ const Events = () => {
       <Navbar config={navLinks} socials={navSocials} />
       <main className="mainContainer">
         <EventHeader
-          date="Sunday June 28th"
+          date="Saturday August 22nd"
           location="Room 120, Woodsworth College, University of Toronto"
           href="#details"
           className="min-h-screen"

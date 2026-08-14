@@ -24,7 +24,7 @@ const flairOffsetMap: Record<
   9: 1,
 };
 
-const eventNumber = 33;
+const eventNumber = 34;
 const lastDigit = Number(String(eventNumber).slice(-1)) as
   | 0
   | 1
